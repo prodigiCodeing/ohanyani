@@ -1931,6 +1931,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Index"
 });
@@ -37591,9 +37611,73 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("Index")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { staticClass: "flex min-h-560 overflow-hidden relative " }, [
+        _c("div", { staticClass: "flex flex-col  justify-start pl-50" }, [
+          _c("div", { staticClass: "relative" }, [
+            _c("img", {
+              staticClass: "mt-50",
+              attrs: {
+                src: "/images/shape.png",
+                alt: "personage",
+                width: "600",
+              },
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "absolute top-100 left-0 py-20 px-30 start-text" },
+              [
+                _vm._v(
+                  "\n                   Մեզ արդեն հասել են քո կենացների մասին պատմությունները: Ասում են՝ շրջապատումդ քեզնից ուժեղ թամադա չկա: Եկել ենք ստուգելու՝ իրո՞ք այդքան լավ գիտես հայկական կենացները:"
+                ),
+                _c("br"),
+                _vm._v(
+                  "\n                    Անցի՛ր թեստը, տեսնենք՝ քանի՞ ճիշտ պատասխան կտաս։\n                   "
+                ),
+                _c("br"),
+                _vm._v(
+                  "\n                    Պատրա՞ստ ես։ Սկսեցինք։\n               "
+                ),
+              ]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-ful mt-100 " }, [
+            _c("button", { staticClass: "rounded-5 start-game" }, [
+              _vm._v("Դե գնացինք"),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              " flex items-end mt-50  justify-end absolute bottom-0 right-50",
+          },
+          [
+            _c("img", {
+              staticClass: "mt-100",
+              attrs: {
+                src: "/images/personage.png",
+                alt: "personage",
+                width: "600",
+              },
+            }),
+          ]
+        ),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 

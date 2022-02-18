@@ -13,14 +13,19 @@
     src: url('/fonts/BraindAmanor.otf');
 }
 
+@font-face {
+    font-family: MyriadPro;
+    src: url('/fonts/MYRIADPRO-REGULAR.woff');
+}
+
 .guess {
     font-family: "BraindAmanorRegular";
     color: rgb(255, 255, 255);
     line-height: 1.105;
     text-align: left;
     text-shadow: 0px 2px 0.94px rgba(0, 0, 0, 0.15);
-    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both ;
-    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    -webkit-animation: scale-up-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both ;
+    animation: scale-up-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 .description{
      font-size: 32px;
@@ -92,6 +97,10 @@
         -webkit-transform: scale(1.2);
         transform: scale(1.2);
     }
+    80% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
     100% {
         -webkit-transform: scale(1);
         transform: scale(1);
@@ -105,6 +114,10 @@
     50% {
         -webkit-transform: scale(1.2);
         transform: scale(1.2);
+    }
+    80% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
     100% {
         -webkit-transform: scale(1);
@@ -159,12 +172,14 @@
 
 /*Cupple Animation */
 .cupple_1{
-    -webkit-animation:cupple_1 0.99s both;
-    animation: cupple_1 0.99s both ;
+    -webkit-animation:cupple_1 1.5s both;
+    animation: cupple_1 1.5s both ;
+    animation-delay: 0.5s;
 }
 .cupple_2{
-    -webkit-animation:cupple_2 0.99s both  ;
-    animation: cupple_2 0.99s both ;
+    -webkit-animation:cupple_2 1.6s both  ;
+    animation: cupple_2 1.6s both ;
+    animation-delay: 0.7s;
 }
 @keyframes cupple_1 {
     0%{    transform: rotate(-45deg);}
@@ -173,7 +188,7 @@
 }
 @-webkit-keyframes cupple_1 {
     0%{    transform: rotate(-45deg);}
-    50%{    transform: rotate(35deg);}
+    70%{    transform: rotate(35deg);}
     100%{    transform: rotate(0deg);}
 }
 @-webkit-keyframes cupple_2 {
@@ -185,4 +200,19 @@
     0%{    transform: rotate(30deg);}
     50%{    transform: rotate(-25deg);}
     100%{    transform: rotate(0);}
+}
+
+
+
+
+
+/*Index Page*/
+
+
+.start-text {
+    font-size: 20px;
+    font-family: "Arial";
+    color: rgb(44, 49, 56);
+    line-height: 1.16;
+    text-align: left;
 }
