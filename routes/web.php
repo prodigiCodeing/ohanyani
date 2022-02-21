@@ -23,3 +23,7 @@ Route::get("/{any?}",function (){
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('facebook')->name('facebook.')->group( function(){
+    Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
+    Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');
+});

@@ -2,6 +2,7 @@ import vueRouter from "vue-router"
 import Vue from "vue";
 import StartGame from "./components/views/StartGame";
 import Index from "./components/views/Index";
+import Game from "./components/views/Game";
 Vue.use(vueRouter);
 const routes = [
     {
@@ -11,6 +12,10 @@ const routes = [
     {
         path:"/start-game",
         component:Index
+    },
+    {
+        path:"/game",
+        component:Game
     }
 ];
 export default new vueRouter({

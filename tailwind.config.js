@@ -37,6 +37,9 @@ module.exports = {
                     DEFAULT: "#6c37fa",
                     facebook: '#4267B1'
                 },
+                textDefault:{
+                    DEFAULT:"#f5d961"
+                },
                 pink: 'rgba(103, 15, 122, 0.05)',
                 navbar: 'rgba(0,0,0,.5)',
                 title: '#262628'

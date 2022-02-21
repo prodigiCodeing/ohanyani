@@ -216,3 +216,42 @@
     line-height: 1.16;
     text-align: left;
 }
+
+
+
+/*Answer*/
+.answer{
+    font-size: 48px;
+    font-family: "BraindAmanorRegular";
+    color: rgb(255, 255, 255);
+    line-height: 1.16;
+    z-index: 30;
+ }
+.right{
+    background: #06f900;
+}
+.wrong{
+    background: #f11131;
+
+}
+.text{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.motivi {
+    font-size:20px;
+    font-family: "MyriadPro";
+    color: rgb(44, 49, 56);
+    line-height: 1.16;
+    text-align: left;
+    z-index: 4;
+}
+.blure-custom{
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+
+}

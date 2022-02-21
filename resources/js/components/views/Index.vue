@@ -12,7 +12,7 @@
                    </div>
                </div>
                 <div class="w-ful mt-100 ">
-                    <button class="rounded-5 start-game"  >Դե գնացինք</button>
+                    <button class="rounded-5 start-game" v-on:click="startGame" >Դե գնացինք</button>
                 </div>
             </div>
             <div class=" flex items-end mt-50  justify-end absolute bottom-0 right-50">
@@ -23,8 +23,16 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 export default {
-    name: "Index"
+    name: "Index",
+    methods:{
+        startGame(){
+            this.$router.push('/game');
+        },
+    }
 }
 </script>
 

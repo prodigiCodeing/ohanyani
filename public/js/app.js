@@ -1918,10 +1918,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/views/Index.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/views/Index.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/views/Game.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/views/Game.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1951,8 +1951,325 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Index"
+  name: "Game",
+  data: function data() {
+    return {
+      questions: [{
+        question: "Ո՞րն է հայկական խնջույքի առաջին պարտադիր կենացը.",
+        answers: [{
+          answer: "առիթի շնորհավորանքը",
+          isRight: false
+        }, {
+          answer: "առիթատիրոջ կենացը",
+          isRight: false
+        }, {
+          answer: "օջախի կենացը",
+          isRight: false
+        }, {
+          answer: "«բարով տեսանք» կենացը",
+          isRight: true
+        }],
+        answered: false,
+        answerType: ""
+      }, {
+        question: "Ի՞նչ խմիչքով չի կարելի կենաց խմել.",
+        answers: [{
+          answer: "վիսկիով",
+          isRight: false
+        }, {
+          answer: "գարեջրով",
+          isRight: false
+        }, {
+          answer: "ջրով",
+          isRight: true
+        }, {
+          answer: "տեկիլայով",
+          isRight: false
+        }],
+        answered: false,
+        answerType: ""
+      }, {
+        question: "Ո՞րն է հաջորդում ծնողների կենացին.",
+        answers: [{
+          answer: "քույրերի և եղբայրների կենացը",
+          isRight: false
+        }, {
+          answer: "տատիկների և պապիկների կենացը",
+          isRight: true
+        }, {
+          answer: "քավորի կենացը",
+          isRight: false
+        }, {
+          answer: "օջախի կենացը",
+          isRight: false
+        }],
+        answered: false,
+        answerType: ""
+      }, {
+        question: "Ո՞րն է հաջորդում ծնողների կենացին.",
+        answers: [{
+          answer: "վերջին անգամ ամուսնանաք",
+          isRight: false
+        }, {
+          answer: "քավորին լսող լինեք",
+          isRight: false
+        }, {
+          answer: "երբեք չբաժանվեք",
+          isRight: false
+        }, {
+          answer: "մի բարձի ծերանաք",
+          isRight: true
+        }],
+        answered: false,
+        answerType: ""
+      }, {
+        question: "Ի՞նչ ի նկատի ունեն, երբ կենացի ժամանակ ասում են՝ «յոթ որդով սեղան նստեք» ",
+        answers: [{
+          answer: "բոլորը պետք է յոթ զավակ ունենան",
+          isRight: false
+        }, {
+          answer: "մաղթում են շատ զավակներ ունենալ և անբաժան լինել նրանցից",
+          isRight: true
+        }, {
+          answer: "հուշում են, որ պետք է մեծ սեղան գնել",
+          isRight: false
+        }, {
+          answer: "պետք է միայն արու զավակների հետ սեղան նստել",
+          isRight: false
+        }],
+        answered: false,
+        answerType: ""
+      }, {
+        question: "Շարունակի՛ր կենացի միտքը. «Այս փոքր բաժակով, բայց...»",
+        answers: [{
+          answer: "ուժեղ կամքով",
+          isRight: false
+        }, {
+          answer: "շատ սիրով",
+          isRight: false
+        }, {
+          answer: "մեծ սրտով",
+          isRight: true
+        }, {
+          answer: "թունդ խմիչքով",
+          isRight: false
+        }],
+        answered: false,
+        answerType: ""
+      }, {
+        question: "Ի՞նչ կենաց է պետք ասել, եթե այլ բան մտքիդ չի գալիս.",
+        answers: [{
+          answer: "լավ լինենք",
+          isRight: false
+        }, {
+          answer: "անուշ խմենք",
+          isRight: false
+        }, {
+          answer: "պետք է լռել",
+          isRight: false
+        }, {
+          answer: "ողջ-առողջ",
+          isRight: true
+        }],
+        answered: false,
+        answerType: ""
+      }, {
+        question: "Ի՞նչ են բացականչում հերթական բաժակը խմելուց առաջ՝ կենացից անմիջապես հետո",
+        answers: [{
+          answer: "վա՜խ",
+          isRight: false
+        }, {
+          answer: "ա՜յ քեզ բան",
+          isRight: false
+        }, {
+          answer: "է՛հ",
+          isRight: true
+        }, {
+          answer: "պա՜հո",
+          isRight: false
+        }],
+        answered: false,
+        answerType: ""
+      }, {
+        question: "Կենացների ժամանակ սեղանակիցներն իրենց բաժակներն իրար են խփում: Իսկ ինչպե՞ս են հայերը կենաց ասում չխմողին, օրինակ՝ երեխային",
+        answers: [{
+          answer: "ստիպում են խմել գոնե մեկ բաժակ",
+          isRight: false
+        }, {
+          answer: "բաժակով խփում են ափսեին",
+          isRight: false
+        }, {
+          answer: "բաժակը թեթև հպում են քթին",
+          isRight: true
+        }, {
+          answer: "չխմողի բաժակի մեջ ջուր են լցնում",
+          isRight: false
+        }],
+        answered: false,
+        answerType: ""
+      }, {
+        question: "Հերթական կենացը խմելիս դիմում են Աստծուն ու խնդրում՝",
+        answers: [{
+          answer: "մեղքերը ներել",
+          isRight: false
+        }, {
+          answer: "նորանոր առիթներ ստեղծել",
+          isRight: false
+        }, {
+          answer: "առողջություն տալ սեղանակիցներին",
+          isRight: false
+        }, {
+          answer: "եղածը շատ չհամարե",
+          isRight: true
+        }],
+        answered: false,
+        answerType: ""
+      }],
+      currentQuestion: 0,
+      cupCount: 2,
+      motiviQuotesRight: [{
+        quote: "Փաստորեն՝ լավ ես տիրապետում հայկական կենացներին։ Զարմացնում ես։"
+      }, {
+        quote: "Չէինք կասկածում, որ ճիշտ կպատասխանես։ Իզուր չէր, որ որոշեցինք խաղալ քեզ հետ։"
+      }, {
+        quote: "Լուռ ծափահարում ենք։ Իսկական թամադա ես քո շրջապատի համար։"
+      }],
+      motiviQuotesWrong: [{
+        quote: "Դե լավ, հանկարծ չհուսահատվես։ Մինչև վերջ խաղա, գուցե դու ես հավաքում ամենաշատ միավորները։"
+      }, {
+        quote: "Ոչինչ, շարունակի՛ր խաղալ, տեսնենք՝ քանի միավոր ես հավաքում։"
+      }],
+      motiviQountForRightAnswer: 0,
+      motiviQountForWrongAnswer: 0,
+      passFirstMini: false,
+      firstMiniStep: 3,
+      firstMiniAnswer: "",
+      passSecondMini: false,
+      secondMiniStep: 8,
+      secondMiniAnswer: "",
+      rightAnswersCount: 0,
+      isRight: false,
+      prize: [{
+        min: 0,
+        max: 0,
+        title: "Վերջից առաջինը",
+        desc: "Շնորհավորում ենք։ Վերջից առաջին հորիզոնականում ես։ Կա՛մ արդեն շատ ես խմել, կա՛մ էլ իրոք ոչինչ չգիտես հայկական կենացներից։ Գնա, պարապիր, հաջորդ խաղին կգաս։"
+      }, {
+        min: 1,
+        max: 6,
+        title: "Սկսնակ կենացագետ",
+        desc: "Բոլորովին էլ վատ չէ․ ինչ-որ բաներ հաստատ լսել ես, բայց մի մասը լավ չես հիշում։ Դեռ շատ աշխատելու տեղ ունես, բայց չհուսահատվե՛ս․ գիտելիքներդ ցուցադրելու դեռ շատ առիթներ կունենաս։"
+      }, {
+        min: 7,
+        max: 9,
+        title: "Թամադայից հինգ պակաս",
+        desc: "Հպարտանում ենք քեզնով․ զգացվում է, որ հայկական խնջույքների մշտական պատվավոր հյուրն ես ու միշտ լավ կենացներ ես ասում։ Մի փոքր էլ, ու կատարյալ արդյունք կունենայիր։ Հաջորդ անգամ հաստատ հաղթողը դու ես լինելու։"
+      }, {
+        min: 10,
+        max: 10,
+        title: "Վարպետ",
+        desc: "Ներեցեք, Դուք պրոֆեսիոնալ թամադա՞ եք։ Այսպիսի արդյունք անգամ քաղաքի լավագույն թամադաները չէին ունենա։ Հիացած ենք քո գիտելիքներով։ Պատկերացնում ենք, թե որքան շատ առիթներ ես ունեցել սեղանապետ ու թամադա լինելու և սուր միտքդ ցույց տալու։"
+      }]
+    };
+  },
+  methods: {
+    checkAnswer: function checkAnswer(e) {
+      var self = this;
+      self.questions[self.currentQuestion].answered = true;
+      self.questions[self.currentQuestion].answerType = e;
+      self.isRight = self.questions[self.currentQuestion].answers[e].isRight;
+      setTimeout(function () {
+        if (self.currentQuestion + 1 != 9) {
+          self.cupCount++;
+          self.currentQuestion++;
+
+          if (self.isRight) {
+            self.motiviQountForRightAnswer = self.motiviQountForRightAnswer == 2 ? 0 : self.motiviQountForRightAnswer + 1;
+            self.rightAnswersCount++;
+          } else self.motiviQountForWrongAnswer = self.motiviQountForWrongAnswer == 1 ? 0 : self.motiviQountForWrongAnswer + 1;
+
+          self.isRight = false;
+        } else {}
+      }, 4000);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/views/Index.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/views/Index.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "Index",
+  methods: {
+    startGame: function startGame() {
+      this.$router.push('/game');
+    }
+  }
 });
 
 /***/ }),
@@ -1996,10 +2313,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     startGame: function startGame() {
       this.$router.push('/start-game');
     },
-    checkLoginState: function checkLoginState() {
-      FB.getLoginStatus(function (response) {//     console.log(response)
-        //     // statusChangeCallback(response);
-      });
+    checkLoginState: function checkLoginState() {// FB.getLoginStatus(function(response) {
+      // //     console.log(response)
+      // //     // statusChangeCallback(response);
+      // });
     }
   }
 });
@@ -37601,6 +37918,290 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/views/Game.vue?vue&type=template&id=f2a32bc4&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/views/Game.vue?vue&type=template&id=f2a32bc4&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: " min-h-560 overflow-hidden relative " }, [
+    _vm.currentQuestion != _vm.firstMiniStep &&
+    _vm.currentQuestion != _vm.secondMiniStep
+      ? _c(
+          "div",
+          {
+            class: [
+              "relative  min-h-560 ",
+              _vm.questions[_vm.currentQuestion].answered ? "blure-custom" : "",
+            ],
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "flex  w-full justify-between px-50 pt-30" },
+              [
+                _c("div", { staticClass: "answer" }, [
+                  _vm._v("Հարց "),
+                  _c("span", { staticClass: "text-textDefault" }, [
+                    _vm._v(_vm._s(_vm.currentQuestion + 1)),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "flex justify-end" },
+                  _vm._l(_vm.cupCount, function (n) {
+                    return _c("div", { staticClass: "mx-5" }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/images/cup1.png",
+                          width: "20",
+                          alt: "",
+                        },
+                      }),
+                    ])
+                  }),
+                  0
+                ),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "flex  w-full justify-between px-150 pt-50 text-center answer",
+              },
+              [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm.questions[_vm.currentQuestion].question) +
+                    "\n        "
+                ),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "flex  w-full justify-between px-150 pt-50 text-center flex-wrap",
+              },
+              [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "rounded-5 w-40p bg-white text-black px-30 py-10 text",
+                    class: [
+                      {
+                        right:
+                          _vm.questions[_vm.currentQuestion].answered &&
+                          _vm.questions[_vm.currentQuestion].answers[0].isRight,
+                      },
+                      {
+                        wrong:
+                          _vm.questions[_vm.currentQuestion].answered &&
+                          _vm.questions[_vm.currentQuestion].answerType == 0 &&
+                          !_vm.questions[_vm.currentQuestion].answers[0]
+                            .isRight,
+                      },
+                    ],
+                    attrs: {
+                      disabled: _vm.questions[_vm.currentQuestion].answered,
+                    },
+                    on: {
+                      click: function () {
+                        return _vm.checkAnswer(0)
+                      },
+                    },
+                  },
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(
+                          _vm.questions[_vm.currentQuestion].answers[0].answer
+                        ) +
+                        "\n            "
+                    ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "rounded-5 w-40p bg-white text-black px-30 py-10 text",
+                    class: [
+                      {
+                        right:
+                          _vm.questions[_vm.currentQuestion].answered &&
+                          _vm.questions[_vm.currentQuestion].answers[1].isRight,
+                      },
+                      {
+                        wrong:
+                          _vm.questions[_vm.currentQuestion].answered &&
+                          _vm.questions[_vm.currentQuestion].answerType == 1 &&
+                          !_vm.questions[_vm.currentQuestion].answers[1]
+                            .isRight,
+                      },
+                    ],
+                    attrs: {
+                      disabled: _vm.questions[_vm.currentQuestion].answered,
+                    },
+                    on: {
+                      click: function () {
+                        return _vm.checkAnswer(1)
+                      },
+                    },
+                  },
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(
+                          _vm.questions[_vm.currentQuestion].answers[1].answer
+                        ) +
+                        "\n            "
+                    ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "rounded-5 w-40p bg-white  text-black px-30 py-10 mt-30 text",
+                    class: [
+                      {
+                        right:
+                          _vm.questions[_vm.currentQuestion].answered &&
+                          _vm.questions[_vm.currentQuestion].answers[2].isRight,
+                      },
+                      {
+                        wrong:
+                          _vm.questions[_vm.currentQuestion].answered &&
+                          _vm.questions[_vm.currentQuestion].answerType == 2 &&
+                          !_vm.questions[_vm.currentQuestion].answers[2]
+                            .isRight,
+                      },
+                    ],
+                    attrs: {
+                      disabled: _vm.questions[_vm.currentQuestion].answered,
+                    },
+                    on: {
+                      click: function () {
+                        return _vm.checkAnswer(2)
+                      },
+                    },
+                  },
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(
+                          _vm.questions[_vm.currentQuestion].answers[2].answer
+                        ) +
+                        "\n            "
+                    ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "rounded-5 w-40p bg-white text-black px-30 py-10 mt-30 text",
+                    class: [
+                      {
+                        right:
+                          _vm.questions[_vm.currentQuestion].answered &&
+                          _vm.questions[_vm.currentQuestion].answers[3].isRight,
+                      },
+                      {
+                        wrong:
+                          _vm.questions[_vm.currentQuestion].answered &&
+                          _vm.questions[_vm.currentQuestion].answerType == 3 &&
+                          !_vm.questions[_vm.currentQuestion].answers[3]
+                            .isRight,
+                      },
+                    ],
+                    attrs: {
+                      disabled: _vm.questions[_vm.currentQuestion].answered,
+                    },
+                    on: {
+                      click: function () {
+                        return _vm.checkAnswer(3)
+                      },
+                    },
+                  },
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(
+                          _vm.questions[_vm.currentQuestion].answers[3].answer
+                        ) +
+                        "\n            "
+                    ),
+                  ]
+                ),
+              ]
+            ),
+          ]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.currentQuestion == _vm.firstMiniStep
+      ? _c("div", { staticClass: " min-h-560 relative" })
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.currentQuestion == _vm.secondMiniStep
+      ? _c("div", { staticClass: " min-h-560 relative" })
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.questions[_vm.currentQuestion].answered
+      ? _c(
+          "div",
+          {
+            staticClass:
+              "absolute min-h-560 bottom-0 z-200 right-150 flex items-end",
+          },
+          [
+            _c("img", {
+              attrs: { src: "/images/motivi.png", width: "95%", alt: "" },
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "absolute top-150 w-60p pl-30 motivi" }, [
+              _vm._v(
+                "\n            " +
+                  _vm._s(
+                    _vm.isRight
+                      ? _vm.motiviQuotesRight[_vm.motiviQountForRightAnswer]
+                          .quote
+                      : _vm.motiviQuotesWrong[_vm.motiviQountForWrongAnswer]
+                          .quote
+                  )
+              ),
+            ]),
+          ]
+        )
+      : _vm._e(),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/views/Index.vue?vue&type=template&id=341dff54&scoped=true&":
 /*!**************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/views/Index.vue?vue&type=template&id=341dff54&scoped=true& ***!
@@ -37616,71 +38217,78 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("div", { staticClass: "flex min-h-560 overflow-hidden relative " }, [
+      _c("div", { staticClass: "flex flex-col  justify-start pl-50" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-ful mt-100 " }, [
+          _c(
+            "button",
+            {
+              staticClass: "rounded-5 start-game",
+              on: { click: _vm.startGame },
+            },
+            [_vm._v("Դե գնացինք")]
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _vm._m(1),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "flex min-h-560 overflow-hidden relative " }, [
-        _c("div", { staticClass: "flex flex-col  justify-start pl-50" }, [
-          _c("div", { staticClass: "relative" }, [
-            _c("img", {
-              staticClass: "mt-50",
-              attrs: {
-                src: "/images/shape.png",
-                alt: "personage",
-                width: "600",
-              },
-            }),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "absolute top-100 left-0 py-20 px-30 start-text" },
-              [
-                _vm._v(
-                  "\n                   Մեզ արդեն հասել են քո կենացների մասին պատմությունները: Ասում են՝ շրջապատումդ քեզնից ուժեղ թամադա չկա: Եկել ենք ստուգելու՝ իրո՞ք այդքան լավ գիտես հայկական կենացները:"
-                ),
-                _c("br"),
-                _vm._v(
-                  "\n                    Անցի՛ր թեստը, տեսնենք՝ քանի՞ ճիշտ պատասխան կտաս։\n                   "
-                ),
-                _c("br"),
-                _vm._v(
-                  "\n                    Պատրա՞ստ ես։ Սկսեցինք։\n               "
-                ),
-              ]
-            ),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-ful mt-100 " }, [
-            _c("button", { staticClass: "rounded-5 start-game" }, [
-              _vm._v("Դե գնացինք"),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              " flex items-end mt-50  justify-end absolute bottom-0 right-50",
-          },
-          [
-            _c("img", {
-              staticClass: "mt-100",
-              attrs: {
-                src: "/images/personage.png",
-                alt: "personage",
-                width: "600",
-              },
-            }),
-          ]
-        ),
-      ]),
+    return _c("div", { staticClass: "relative" }, [
+      _c("img", {
+        staticClass: "mt-50",
+        attrs: { src: "/images/shape.png", alt: "personage", width: "600" },
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "absolute top-100 left-0 py-20 px-30 start-text" },
+        [
+          _vm._v(
+            "\n                   Մեզ արդեն հասել են քո կենացների մասին պատմությունները: Ասում են՝ շրջապատումդ քեզնից ուժեղ թամադա չկա: Եկել ենք ստուգելու՝ իրո՞ք այդքան լավ գիտես հայկական կենացները:"
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                    Անցի՛ր թեստը, տեսնենք՝ քանի՞ ճիշտ պատասխան կտաս։\n                   "
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                    Պատրա՞ստ ես։ Սկսեցինք։\n               "
+          ),
+        ]
+      ),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          " flex items-end mt-50  justify-end absolute bottom-0 right-50",
+      },
+      [
+        _c("img", {
+          staticClass: "mt-100",
+          attrs: {
+            src: "/images/personage.png",
+            alt: "personage",
+            width: "600",
+          },
+        }),
+      ]
+    )
   },
 ]
 render._withStripped = true
@@ -37720,7 +38328,7 @@ var render = function () {
             "button",
             {
               staticClass: "rounded-5 start-game",
-              on: { click: _vm.checkLoginState },
+              on: { click: _vm.startGame },
             },
             [_vm._v("Սկսել Խաղը")]
           ),
@@ -53303,6 +53911,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/views/Game.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/views/Game.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Game_vue_vue_type_template_id_f2a32bc4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Game.vue?vue&type=template&id=f2a32bc4&scoped=true& */ "./resources/js/components/views/Game.vue?vue&type=template&id=f2a32bc4&scoped=true&");
+/* harmony import */ var _Game_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Game.vue?vue&type=script&lang=js& */ "./resources/js/components/views/Game.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Game_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Game_vue_vue_type_template_id_f2a32bc4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Game_vue_vue_type_template_id_f2a32bc4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "f2a32bc4",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/views/Game.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/views/Game.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/views/Game.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Game.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/views/Game.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/views/Game.vue?vue&type=template&id=f2a32bc4&scoped=true&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/views/Game.vue?vue&type=template&id=f2a32bc4&scoped=true& ***!
+  \*******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_template_id_f2a32bc4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Game.vue?vue&type=template&id=f2a32bc4&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/views/Game.vue?vue&type=template&id=f2a32bc4&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_template_id_f2a32bc4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_template_id_f2a32bc4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/views/Index.vue":
 /*!*************************************************!*\
   !*** ./resources/js/components/views/Index.vue ***!
@@ -53455,6 +54132,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_views_StartGame__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/views/StartGame */ "./resources/js/components/views/StartGame.vue");
 /* harmony import */ var _components_views_Index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/views/Index */ "./resources/js/components/views/Index.vue");
+/* harmony import */ var _components_views_Game__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/views/Game */ "./resources/js/components/views/Game.vue");
+
 
 
 
@@ -53466,6 +54145,9 @@ var routes = [{
 }, {
   path: "/start-game",
   component: _components_views_Index__WEBPACK_IMPORTED_MODULE_3__["default"]
+}, {
+  path: "/game",
+  component: _components_views_Game__WEBPACK_IMPORTED_MODULE_4__["default"]
 }];
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: "history",
