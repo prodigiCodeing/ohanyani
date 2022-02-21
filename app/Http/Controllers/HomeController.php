@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -26,7 +27,13 @@ class HomeController extends Controller
         return view('home');
     }
     public function sendQuote(Request $request){
-        return response()->json([
+
+        Mail::raw($request->message, function ($message) {
+            $message->from('info.ohanyan@gmail.com', 'Social Team');
+            $message->to('ohanyana2022@yandex.ru');
+            $message->subject('App - Forget Password');
+        });
+         return response()->json([
             'success'=>true
         ]);
     }
@@ -37,6 +44,8 @@ class HomeController extends Controller
         ]);
     }
     public function saveUserProgress(Request $request){
+        dd($request);
+
         return response()->json([
             'success'=>true
         ]);

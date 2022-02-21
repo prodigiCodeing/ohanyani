@@ -14,6 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post('/send-quote',[\App\Http\Controllers\HomeController::class, 'sendQuote']);
-Route::post('/send-numbers-mail',[\App\Http\Controllers\HomeController::class, 'sendNumberMAil']);
-Route::post('/save-progress',[\App\Http\Controllers\HomeController::class, 'saveUserProgress']);
+

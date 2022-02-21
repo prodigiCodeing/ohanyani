@@ -60,7 +60,9 @@
 
 <script>
 import axios from 'axios'
-
+axios.defaults.headers.common = {
+    'X-Requested-With': 'XMLHttpRequest'
+};
 export default {
     name: "Game",
     data: function () {
@@ -251,12 +253,13 @@ export default {
             },4000)
         },
         sendFirstEmail(){
+            const self = this
             axios
-                .post('/api/send-quote',[
-
-                ])
+                .post('/send-quote', {
+                    message:self.firstMiniAnswer
+                })
                 .then(response => {
-
+                    console.log(response)
             })
                 .catch(error => console.log(error));
         },

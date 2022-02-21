@@ -15,6 +15,8 @@ class CreateUserQuizeTableMigration extends Migration
     {
         Schema::create('user_quize_table_migration', function (Blueprint $table) {
             $table->id();
+            $table->integer('userId')->references('id')->on('users');
+            $table->integer('score');
             $table->timestamps();
         });
     }

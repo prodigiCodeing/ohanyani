@@ -1990,6 +1990,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
+  'X-Requested-With': 'XMLHttpRequest'
+};
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Game",
   data: function data() {
@@ -2233,7 +2236,12 @@ __webpack_require__.r(__webpack_exports__);
       }, 4000);
     },
     sendFirstEmail: function sendFirstEmail() {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/send-quote', []).then(function (response) {})["catch"](function (error) {
+      var self = this;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/send-quote', {
+        message: self.firstMiniAnswer
+      }).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {
         return console.log(error);
       });
     },
