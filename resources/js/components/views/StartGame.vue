@@ -5,7 +5,7 @@
                 <div class="text-72 guess mb-50">Գուշակի՛ր կենացը</div>
                 <div class="description mb-50">Անցիր թեստը ու պարզիր, թե ինչքան կենացագետ ես դու</div>
                 <div class="w-full">
-                    <button class="rounded-5 start-game" v-on:click="startGame">Սկսել Խաղը</button>
+                    <button class="rounded-5 start-game" v-on:click="checkLoginState">Սկսել Խաղը</button>
                 </div>
             </div>
             <div class="w-40p flex items-start mt-50  justify-end ">
@@ -29,10 +29,10 @@ export default {
         },
         checkLoginState() {
 
-            // FB.getLoginStatus(function(response) {
-            // //     console.log(response)
-            // //     // statusChangeCallback(response);
-            // });
+            FB.getLoginStatus(function(response) {
+                console.log(response)
+            //     // statusChangeCallback(response);
+            });
         }
     }
 }

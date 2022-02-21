@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FaceBookController;
 use Illuminate\Support\Facades\Route;
 
 /*
