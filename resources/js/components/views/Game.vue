@@ -35,7 +35,7 @@
         </div>
         <div v-if="currentQuestion == firstMiniStep && !passFirstMini" class=" min-h-560  relative overflow-hidden ">
             <p class="absolute heading-text">Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ</p>
-            <img class="absolute top-30 right-150 z-200" src="/images/first-mini.png" width="400" alt="">
+            <img class="absolute top-30 right-150 z-200 " src="/images/first-mini.png" width="400" alt="">
             <textarea class="notes" v-model="firstMiniAnswer"></textarea>
             <div class="flex px-50 absolute bottom-60 w-70p items-center">
                 <div class="w-60p  pr-60">
@@ -50,12 +50,13 @@
         <div v-if="currentQuestion == secondMiniStep && !passSecondMini" class=" min-h-560 relative">
 
 
-            <p class="   ">Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ</p>
-            <img src="/images/green.png" alt="" class="pl-50  top-200" width="40%">
-            <img class="absolute top-30 right-150 z-200" src="/images/second-mini.png" width="400" alt="">
-             <div class="flex px-50 absolute bottom-60 w-70p items-center">
+            <p class="pl-50 mt-50 text-white">Սթափության Թեստ</p>
+            <p class="pl-50 mt-20 text-white max-w-500">Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա</p>
+            <img src="/images/green.png" alt="" class="pl-50 mt-20" width="500">
+            <img class="absolute top-30 right-100 z-200" src="/images/second-mini.png" width="400" alt="">
+             <div class="flex px-50 absolute bottom-60 w-70p items-end">
                  <div class="w-40p  pr-60">
-                     <input type="text">
+                     <input type="text" class="bg-transparent border-bottom-1 border-bottom-white bb-s py-5" placeholder="Գրել պատասխանը">
                  </div>
                 <div class="w-40p">
                     <button class="rounded-5 start-game start-send w-full" :disabled="firstMiniAnswer == '' " v-on:click="sendFirstEmail">Ողղարկել</button>

@@ -2004,6 +2004,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
   'X-Requested-With': 'XMLHttpRequest'
@@ -38217,7 +38218,7 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("img", {
-            staticClass: "absolute top-30 right-150 z-200",
+            staticClass: "absolute top-30 right-150 z-200 ",
             attrs: { src: "/images/first-mini.png", width: "400", alt: "" },
           }),
           _vm._v(" "),
@@ -38266,23 +38267,29 @@ var render = function () {
     _vm._v(" "),
     _vm.currentQuestion == _vm.secondMiniStep && !_vm.passSecondMini
       ? _c("div", { staticClass: " min-h-560 relative" }, [
-          _c("p", { staticClass: "   " }, [
-            _vm._v("Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ"),
+          _c("p", { staticClass: "pl-50 mt-50 text-white" }, [
+            _vm._v("Սթափության Թեստ"),
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "pl-50 mt-20 text-white max-w-500" }, [
+            _vm._v(
+              "Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա"
+            ),
           ]),
           _vm._v(" "),
           _c("img", {
-            staticClass: "pl-50  top-200",
-            attrs: { src: "/images/green.png", alt: "", width: "40%" },
+            staticClass: "pl-50 mt-20",
+            attrs: { src: "/images/green.png", alt: "", width: "500" },
           }),
           _vm._v(" "),
           _c("img", {
-            staticClass: "absolute top-30 right-150 z-200",
+            staticClass: "absolute top-30 right-100 z-200",
             attrs: { src: "/images/second-mini.png", width: "400", alt: "" },
           }),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "flex px-50 absolute bottom-60 w-70p items-center" },
+            { staticClass: "flex px-50 absolute bottom-60 w-70p items-end" },
             [
               _vm._m(1),
               _vm._v(" "),
@@ -38347,7 +38354,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "w-40p  pr-60" }, [
-      _c("input", { attrs: { type: "text" } }),
+      _c("input", {
+        staticClass:
+          "bg-transparent border-bottom-1 border-bottom-white bb-s py-5",
+        attrs: { type: "text", placeholder: "Գրել պատասխանը" },
+      }),
     ])
   },
 ]
