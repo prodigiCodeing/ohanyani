@@ -38328,7 +38328,7 @@ var render = function () {
             "button",
             {
               staticClass: "rounded-5 start-game",
-              on: { click: _vm.startGame },
+              on: { click: _vm.start2556Game },
             },
             [_vm._v("Սկսել Խաղը")]
           ),
@@ -54163,8 +54163,8 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\OpenServer\domains\ohanyani\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\OpenServer\domains\ohanyani\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! /var/www/ohanyani/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/ohanyani/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })
