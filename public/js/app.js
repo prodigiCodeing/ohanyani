@@ -1927,6 +1927,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -1977,6 +1979,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Game",
   data: function data() {
@@ -2169,7 +2182,7 @@ __webpack_require__.r(__webpack_exports__);
       motiviQountForRightAnswer: 0,
       motiviQountForWrongAnswer: 0,
       passFirstMini: false,
-      firstMiniStep: 3,
+      firstMiniStep: 0,
       firstMiniAnswer: "",
       passSecondMini: false,
       secondMiniStep: 8,
@@ -2218,7 +2231,19 @@ __webpack_require__.r(__webpack_exports__);
           self.isRight = false;
         } else {}
       }, 4000);
-    }
+    },
+    sendFirstEmail: function sendFirstEmail() {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/send-quote', []).then(function (response) {})["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    sendSecondEmail: function sendSecondEmail() {}
+  },
+  computed: {},
+  created: function created() {
+    this.questions.sort(function () {
+      return .5 - Math.random();
+    });
   }
 });
 
@@ -2314,9 +2339,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       this.$router.push('/start-game');
     },
     checkLoginState: function checkLoginState() {
-      FB.getLoginStatus(function (response) {
-        console.log(response); //     // statusChangeCallback(response);
-      });
+      window.location.href = "/facebook/auth";
     }
   }
 });
@@ -37934,8 +37957,8 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: " min-h-560 overflow-hidden relative " }, [
-    _vm.currentQuestion != _vm.firstMiniStep &&
-    _vm.currentQuestion != _vm.secondMiniStep
+    (_vm.currentQuestion != _vm.firstMiniStep || _vm.passFirstMini) &&
+    (_vm.currentQuestion != _vm.secondMiniStep || _vm.passSecondMini)
       ? _c(
           "div",
           {
@@ -38159,7 +38182,57 @@ var render = function () {
       : _vm._e(),
     _vm._v(" "),
     _vm.currentQuestion == _vm.firstMiniStep
-      ? _c("div", { staticClass: " min-h-560 relative" })
+      ? _c("div", { staticClass: " min-h-560  relative overflow-hidden " }, [
+          _c("p", { staticClass: "absolute heading-text" }, [
+            _vm._v("Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ"),
+          ]),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "absolute top-30 right-150 z-200",
+            attrs: { src: "/images/first-mini.png", width: "400", alt: "" },
+          }),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.firstMiniAnswer,
+                expression: "firstMiniAnswer",
+              },
+            ],
+            staticClass: "notes",
+            domProps: { value: _vm.firstMiniAnswer },
+            on: {
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.firstMiniAnswer = $event.target.value
+              },
+            },
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "flex px-50 absolute bottom-60 w-70p items-center" },
+            [
+              _c("div", { staticClass: "w-40p" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "rounded-5 start-game start-send w-full",
+                    attrs: { disabled: _vm.firstMiniAnswer == "" },
+                    on: { click: _vm.sendFirstEmail },
+                  },
+                  [_vm._v("Ողղարկել")]
+                ),
+              ]),
+              _vm._v(" "),
+              _vm._m(0),
+            ]
+          ),
+        ])
       : _vm._e(),
     _vm._v(" "),
     _vm.currentQuestion == _vm.secondMiniStep
@@ -38195,7 +38268,18 @@ var render = function () {
       : _vm._e(),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-60p  pr-60" }, [
+      _c("p", { staticClass: "desc pr-20" }, [
+        _vm._v("Ամենալավ կենաց ասողը, կստանա  նվեր Ohanyan Brandy-ի կողմից"),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -38328,9 +38412,8 @@ var render = function () {
             "button",
             {
               staticClass: "rounded-5 start-game",
-
               on: { click: _vm.checkLoginState },
-             },
+            },
             [_vm._v("Սկսել Խաղը")]
           ),
         ]),
@@ -54164,8 +54247,8 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/ohanyani/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/ohanyani/resources/css/app.css */"./resources/css/app.css");
+__webpack_require__(/*! C:\OpenServer\domains\ohanyani\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\OpenServer\domains\ohanyani\resources\css\app.css */"./resources/css/app.css");
 
 
 /***/ })

@@ -18,12 +18,14 @@ use Illuminate\Support\Facades\Route;
 //    return view('index');
 //});
 
-Route::get("/{any?}",function (){
+Route::get("/",function (){
     return view("index");
 });
-Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get("/{any}",function (){
+    return view("index");
+})->where('any', '^(?!api).*$')->middleware('auth');
+
 Route::prefix('facebook')->name('facebook.')->group( function(){
     Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
     Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');

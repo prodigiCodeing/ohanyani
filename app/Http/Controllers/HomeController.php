@@ -25,4 +25,20 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function sendQuote(Request $request){
+        return response()->json([
+            'success'=>true
+        ]);
+    }
+    public function sendNumberMAil(Request $request){
+        dd($request);
+        return response()->json([
+            'success'=>true
+        ]);
+    }
+    public function saveUserProgress(Request $request){
+        return response()->json([
+            'success'=>true
+        ]);
+    }
 }

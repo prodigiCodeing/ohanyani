@@ -1,6 +1,6 @@
 <template>
     <div class=" min-h-560 overflow-hidden relative ">
-        <div :class="['relative  min-h-560 ', questions[currentQuestion].answered ? 'blure-custom' : '' ]" v-if="currentQuestion != firstMiniStep && currentQuestion != secondMiniStep">
+        <div :class="['relative  min-h-560 ', questions[currentQuestion].answered ? 'blure-custom' : '' ]" v-if="(currentQuestion != firstMiniStep || passFirstMini) && (currentQuestion != secondMiniStep || passSecondMini)">
             <div class="flex  w-full justify-between px-50 pt-30">
                 <div class="answer">Հարց <span class="text-textDefault">{{ currentQuestion + 1 }}</span></div>
                 <div class="flex justify-end">
@@ -33,8 +33,18 @@
                 </button>
             </div>
         </div>
-        <div v-if="currentQuestion == firstMiniStep" class=" min-h-560 relative">
-
+        <div v-if="currentQuestion == firstMiniStep" class=" min-h-560  relative overflow-hidden ">
+            <p class="absolute heading-text">Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ</p>
+            <img class="absolute top-30 right-150 z-200" src="/images/first-mini.png" width="400" alt="">
+            <textarea class="notes" v-model="firstMiniAnswer"></textarea>
+            <div class="flex px-50 absolute bottom-60 w-70p items-center">
+                <div class="w-40p">
+                    <button class="rounded-5 start-game start-send w-full" :disabled="firstMiniAnswer == '' " v-on:click="sendFirstEmail">Ողղարկել</button>
+                </div>
+                <div class="w-60p  pr-60">
+                    <p class="desc pr-20">Ամենալավ կենաց ասողը, կստանա  նվեր Ohanyan Brandy-ի կողմից</p>
+                </div>
+            </div>
         </div>
         <div v-if="currentQuestion == secondMiniStep" class=" min-h-560 relative">
 
@@ -49,6 +59,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     name: "Game",
     data: function () {
@@ -179,7 +191,7 @@ export default {
             motiviQountForRightAnswer: 0,
             motiviQountForWrongAnswer: 0,
             passFirstMini: false,
-            firstMiniStep: 3,
+            firstMiniStep: 0,
             firstMiniAnswer: "",
             passSecondMini: false,
             secondMiniStep: 8,
@@ -237,7 +249,27 @@ export default {
 
 
             },4000)
-        }
+        },
+        sendFirstEmail(){
+            axios
+                .post('/api/send-quote',[
+
+                ])
+                .then(response => {
+
+            })
+                .catch(error => console.log(error));
+        },
+        sendSecondEmail(){
+
+        },
+    },
+    computed: {
+
+    },
+    created() {
+        this.questions.sort( () => .5 - Math.random() )
+
     }
 }
 </script>

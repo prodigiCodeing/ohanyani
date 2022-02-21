@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -20,20 +20,20 @@ class FaceBookController extends Controller
 
     public function callbackFromFacebook()
     {
-        try {
-            $user = Socialite::driver('facebook')->user();
+         try {
+//             dd(Socialite::driver('facebook')->stateless()->user());
 
-            $saveUser = User::updateOrCreate([
+             $user = Socialite::driver('facebook')->user();
+             $saveUser = User::updateOrCreate([
                 'facebook_id' => $user->getId(),
             ],[
                 'name' => $user->getName(),
                 'email' => $user->getEmail(),
-                'password' => Hash::make($user->getName().'@'.$user->getId())
+                'password' => Hash::make($user->getName().'@'.$user->getId()),
             ]);
-
             Auth::loginUsingId($saveUser->id);
 
-            return redirect()->route('home');
+            return redirect('/start-game');
         } catch (\Throwable $th) {
             throw $th;
         }

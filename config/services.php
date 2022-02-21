@@ -30,8 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     'facebook' => [
-        'client_id' => '', //USE FROM FACEBOOK DEVELOPER ACCOUNT
-        'client_secret' => '', //USE FROM FACEBOOK DEVELOPER ACCOUNT
-        'redirect' => 'https://examplelaravel8.test/facebook/callback/'
+        'client_id' => '945780292773282',
+        'client_secret' => 'a75eadd35f2fff4bda46bd060d2589bb',
+        'redirect' => 'http://localhost:8000/facebook/callback/'
     ],
 ];

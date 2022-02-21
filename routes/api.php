@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::post('/send-quote',[\App\Http\Controllers\HomeController::class, 'sendQuote']);
+Route::post('/send-numbers-mail',[\App\Http\Controllers\HomeController::class, 'sendNumberMAil']);
+Route::post('/save-progress',[\App\Http\Controllers\HomeController::class, 'saveUserProgress']);

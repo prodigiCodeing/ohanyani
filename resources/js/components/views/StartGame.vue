@@ -28,11 +28,7 @@ export default {
             this.$router.push('/start-game');
         },
         checkLoginState() {
-
-            FB.getLoginStatus(function(response) {
-                console.log(response)
-            //     // statusChangeCallback(response);
-            });
+            window.location.href = "/facebook/auth";
         }
     }
 }
