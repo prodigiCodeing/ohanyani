@@ -2313,10 +2313,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     startGame: function startGame() {
       this.$router.push('/start-game');
     },
-    checkLoginState: function checkLoginState() {// FB.getLoginStatus(function(response) {
-      // //     console.log(response)
-      // //     // statusChangeCallback(response);
-      // });
+    checkLoginState: function checkLoginState() {
+      FB.getLoginStatus(function (response) {
+        console.log(response); //     // statusChangeCallback(response);
+      });
     }
   }
 });
@@ -38328,7 +38328,7 @@ var render = function () {
             "button",
             {
               staticClass: "rounded-5 start-game",
-              on: { click: _vm.startGame },
+              on: { click: _vm.checkLoginState },
             },
             [_vm._v("Սկսել Խաղը")]
           ),
