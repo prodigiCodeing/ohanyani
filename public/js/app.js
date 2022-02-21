@@ -1989,6 +1989,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
   'X-Requested-With': 'XMLHttpRequest'
@@ -2185,10 +2200,10 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
       motiviQountForRightAnswer: 0,
       motiviQountForWrongAnswer: 0,
       passFirstMini: false,
-      firstMiniStep: 0,
+      firstMiniStep: 3,
       firstMiniAnswer: "",
       passSecondMini: false,
-      secondMiniStep: 8,
+      secondMiniStep: 0,
       secondMiniAnswer: "",
       rightAnswersCount: 0,
       isRight: false,
@@ -2232,7 +2247,11 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
           } else self.motiviQountForWrongAnswer = self.motiviQountForWrongAnswer == 1 ? 0 : self.motiviQountForWrongAnswer + 1;
 
           self.isRight = false;
-        } else {}
+        } else {
+          if (self.isRight) {
+            self.rightAnswersCount++;
+          }
+        }
       }, 4000);
     },
     sendFirstEmail: function sendFirstEmail() {
@@ -2240,7 +2259,9 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/send-quote', {
         message: self.firstMiniAnswer
       }).then(function (response) {
-        console.log(response);
+        if (response.data.success) {
+          self.passFirstMini = true;
+        }
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -38189,7 +38210,7 @@ var render = function () {
         )
       : _vm._e(),
     _vm._v(" "),
-    _vm.currentQuestion == _vm.firstMiniStep
+    _vm.currentQuestion == _vm.firstMiniStep && !_vm.passFirstMini
       ? _c("div", { staticClass: " min-h-560  relative overflow-hidden " }, [
           _c("p", { staticClass: "absolute heading-text" }, [
             _vm._v("Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ"),
@@ -38225,6 +38246,8 @@ var render = function () {
             "div",
             { staticClass: "flex px-50 absolute bottom-60 w-70p items-center" },
             [
+              _vm._m(0),
+              _vm._v(" "),
               _c("div", { staticClass: "w-40p" }, [
                 _c(
                   "button",
@@ -38236,15 +38259,47 @@ var render = function () {
                   [_vm._v("Ողղարկել")]
                 ),
               ]),
-              _vm._v(" "),
-              _vm._m(0),
             ]
           ),
         ])
       : _vm._e(),
     _vm._v(" "),
-    _vm.currentQuestion == _vm.secondMiniStep
-      ? _c("div", { staticClass: " min-h-560 relative" })
+    _vm.currentQuestion == _vm.secondMiniStep && !_vm.passSecondMini
+      ? _c("div", { staticClass: " min-h-560 relative" }, [
+          _c("p", { staticClass: "   " }, [
+            _vm._v("Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ"),
+          ]),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "pl-50  top-200",
+            attrs: { src: "/images/green.png", alt: "", width: "40%" },
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "absolute top-30 right-150 z-200",
+            attrs: { src: "/images/second-mini.png", width: "400", alt: "" },
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "flex px-50 absolute bottom-60 w-70p items-center" },
+            [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", { staticClass: "w-40p" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "rounded-5 start-game start-send w-full",
+                    attrs: { disabled: _vm.firstMiniAnswer == "" },
+                    on: { click: _vm.sendFirstEmail },
+                  },
+                  [_vm._v("Ողղարկել")]
+                ),
+              ]),
+            ]
+          ),
+        ])
       : _vm._e(),
     _vm._v(" "),
     _vm.questions[_vm.currentQuestion].answered
@@ -38285,6 +38340,14 @@ var staticRenderFns = [
       _c("p", { staticClass: "desc pr-20" }, [
         _vm._v("Ամենալավ կենաց ասողը, կստանա  նվեր Ohanyan Brandy-ի կողմից"),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-40p  pr-60" }, [
+      _c("input", { attrs: { type: "text" } }),
     ])
   },
 ]

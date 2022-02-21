@@ -33,20 +33,35 @@
                 </button>
             </div>
         </div>
-        <div v-if="currentQuestion == firstMiniStep" class=" min-h-560  relative overflow-hidden ">
+        <div v-if="currentQuestion == firstMiniStep && !passFirstMini" class=" min-h-560  relative overflow-hidden ">
             <p class="absolute heading-text">Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ</p>
             <img class="absolute top-30 right-150 z-200" src="/images/first-mini.png" width="400" alt="">
             <textarea class="notes" v-model="firstMiniAnswer"></textarea>
             <div class="flex px-50 absolute bottom-60 w-70p items-center">
-                <div class="w-40p">
-                    <button class="rounded-5 start-game start-send w-full" :disabled="firstMiniAnswer == '' " v-on:click="sendFirstEmail">Ողղարկել</button>
-                </div>
                 <div class="w-60p  pr-60">
                     <p class="desc pr-20">Ամենալավ կենաց ասողը, կստանա  նվեր Ohanyan Brandy-ի կողմից</p>
                 </div>
+                <div class="w-40p">
+                    <button class="rounded-5 start-game start-send w-full" :disabled="firstMiniAnswer == '' " v-on:click="sendFirstEmail">Ողղարկել</button>
+                </div>
+
             </div>
         </div>
-        <div v-if="currentQuestion == secondMiniStep" class=" min-h-560 relative">
+        <div v-if="currentQuestion == secondMiniStep && !passSecondMini" class=" min-h-560 relative">
+
+
+            <p class="   ">Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ</p>
+            <img src="/images/green.png" alt="" class="pl-50  top-200" width="40%">
+            <img class="absolute top-30 right-150 z-200" src="/images/second-mini.png" width="400" alt="">
+             <div class="flex px-50 absolute bottom-60 w-70p items-center">
+                 <div class="w-40p  pr-60">
+                     <input type="text">
+                 </div>
+                <div class="w-40p">
+                    <button class="rounded-5 start-game start-send w-full" :disabled="firstMiniAnswer == '' " v-on:click="sendFirstEmail">Ողղարկել</button>
+                </div>
+
+            </div>
 
         </div>
         <div class="absolute min-h-560 bottom-0 z-200 right-150 flex items-end"
@@ -193,10 +208,10 @@ export default {
             motiviQountForRightAnswer: 0,
             motiviQountForWrongAnswer: 0,
             passFirstMini: false,
-            firstMiniStep: 0,
+            firstMiniStep: 3,
             firstMiniAnswer: "",
             passSecondMini: false,
-            secondMiniStep: 8,
+            secondMiniStep: 0,
             secondMiniAnswer: "",
             rightAnswersCount: 0,
             isRight: false,
@@ -246,6 +261,9 @@ export default {
                     else self.motiviQountForWrongAnswer = self.motiviQountForWrongAnswer == 1 ? 0 : self.motiviQountForWrongAnswer+1
                     self.isRight = false;
                 }else{
+                    if(self.isRight) {
+                        self.rightAnswersCount++
+                    }
 
                 }
 
@@ -259,7 +277,9 @@ export default {
                     message:self.firstMiniAnswer
                 })
                 .then(response => {
-                    console.log(response)
+                    if(response.data.success){
+                        self.passFirstMini = true
+                    }
             })
                 .catch(error => console.log(error));
         },

@@ -29,9 +29,9 @@ class HomeController extends Controller
     public function sendQuote(Request $request){
 
         Mail::raw($request->message, function ($message) {
-            $message->from('info.ohanyan@gmail.com', 'Social Team');
-            $message->to('ohanyana2022@yandex.ru');
-            $message->subject('App - Forget Password');
+            $message->from('info.ohanyan@gmail.com', 'Ohanyan Team');
+            $message->to('smariamvs@gmail.com');
+            $message->subject('Quote message for first mini quiz');
         });
          return response()->json([
             'success'=>true
