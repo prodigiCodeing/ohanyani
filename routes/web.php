@@ -24,7 +24,7 @@ Route::get("/",function (){
 
 Route::get("/{any}",function (){
     return view("index");
-})->where('any', '^(?!api).*$')->middleware('auth');
+})->middleware('auth');
 
 Route::post('/send-quote',[\App\Http\Controllers\HomeController::class, 'sendQuote']);
 Route::post('/send-numbers-mail',[\App\Http\Controllers\HomeController::class, 'sendNumberMAil']);

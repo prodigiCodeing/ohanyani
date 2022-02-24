@@ -2005,6 +2005,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
   'X-Requested-With': 'XMLHttpRequest'
@@ -2204,7 +2226,7 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
       firstMiniStep: 3,
       firstMiniAnswer: "",
       passSecondMini: false,
-      secondMiniStep: 0,
+      secondMiniStep: 8,
       secondMiniAnswer: "",
       rightAnswersCount: 0,
       isRight: false,
@@ -2238,9 +2260,8 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
       self.questions[self.currentQuestion].answerType = e;
       self.isRight = self.questions[self.currentQuestion].answers[e].isRight;
       setTimeout(function () {
-        if (self.currentQuestion + 1 != 9) {
+        if (self.currentQuestion + 1 < 10) {
           self.cupCount++;
-          self.currentQuestion++;
 
           if (self.isRight) {
             self.motiviQountForRightAnswer = self.motiviQountForRightAnswer == 2 ? 0 : self.motiviQountForRightAnswer + 1;
@@ -2252,7 +2273,15 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
           if (self.isRight) {
             self.rightAnswersCount++;
           }
+
+          axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/save-progress', {
+            rightCount: self.rightAnswersCount
+          }).then(function (response) {
+            console.log(response);
+          });
         }
+
+        self.currentQuestion++;
       }, 4000);
     },
     sendFirstEmail: function sendFirstEmail() {
@@ -2267,7 +2296,18 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
         return console.log(error);
       });
     },
-    sendSecondEmail: function sendSecondEmail() {}
+    sendSecondEmail: function sendSecondEmail() {
+      var self = this;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/send-numbers-mail', {
+        message: self.secondMiniAnswer
+      }).then(function (response) {
+        if (response.data.success) {
+          self.passSecondMini = true;
+        }
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    }
   },
   computed: {},
   created: function created() {
@@ -2291,6 +2331,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+//
+//
+//
+//
 //
 //
 //
@@ -37988,7 +38032,8 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: " min-h-560 overflow-hidden relative " }, [
     (_vm.currentQuestion != _vm.firstMiniStep || _vm.passFirstMini) &&
-    (_vm.currentQuestion != _vm.secondMiniStep || _vm.passSecondMini)
+    (_vm.currentQuestion != _vm.secondMiniStep || _vm.passSecondMini) &&
+    _vm.currentQuestion != 10
       ? _c(
           "div",
           {
@@ -38032,7 +38077,7 @@ var render = function () {
               "div",
               {
                 staticClass:
-                  "flex  w-full justify-between px-150 pt-50 text-center answer",
+                  "flex  w-full justify-between pt-mobile px-150-mobile font-size-48-mobile px-150 pt-50 text-center answer",
               },
               [
                 _vm._v(
@@ -38047,14 +38092,14 @@ var render = function () {
               "div",
               {
                 staticClass:
-                  "flex  w-full justify-between px-150 pt-50 text-center flex-wrap",
+                  "flex flex-dir-for-buttons font-size-48-mobile  w-full justify-between px-150 px-150-mobile pt-50 text-center flex-wrap",
               },
               [
                 _c(
                   "button",
                   {
                     staticClass:
-                      "rounded-5 w-40p bg-white text-black px-30 py-10 text",
+                      "rounded-5 w-40p bg-white text-black px-30 py-10 text arial",
                     class: [
                       {
                         right:
@@ -38093,7 +38138,7 @@ var render = function () {
                   "button",
                   {
                     staticClass:
-                      "rounded-5 w-40p bg-white text-black px-30 py-10 text",
+                      "rounded-5 w-40p bg-white text-black px-30 py-10 text arial mt-30-mobile",
                     class: [
                       {
                         right:
@@ -38132,7 +38177,7 @@ var render = function () {
                   "button",
                   {
                     staticClass:
-                      "rounded-5 w-40p bg-white  text-black px-30 py-10 mt-30 text",
+                      "rounded-5 w-40p bg-white  text-black px-30 py-10 mt-30 text arial",
                     class: [
                       {
                         right:
@@ -38171,7 +38216,7 @@ var render = function () {
                   "button",
                   {
                     staticClass:
-                      "rounded-5 w-40p bg-white text-black px-30 py-10 mt-30 text",
+                      "rounded-5 w-40p bg-white text-black px-30 py-10 mt-30 text arial",
                     class: [
                       {
                         right:
@@ -38211,51 +38256,146 @@ var render = function () {
         )
       : _vm._e(),
     _vm._v(" "),
-    _vm.currentQuestion == _vm.firstMiniStep && !_vm.passFirstMini
-      ? _c("div", { staticClass: " min-h-560  relative overflow-hidden " }, [
-          _c("p", { staticClass: "absolute heading-text" }, [
-            _vm._v("Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ"),
-          ]),
+    _vm.currentQuestion == _vm.firstMiniStep &&
+    !_vm.passFirstMini &&
+    _vm.currentQuestion != 10
+      ? _c(
+          "div",
+          { staticClass: " min-h-560  height-full relative overflow-hidden " },
+          [
+            _c("p", { staticClass: "absolute heading-text" }, [
+              _vm._v("Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ"),
+            ]),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "absolute top-30 mobile-bottom right-100 z-200 ",
+              attrs: { src: "/images/first-mini.png", width: "400", alt: "" },
+            }),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.firstMiniAnswer,
+                  expression: "firstMiniAnswer",
+                },
+              ],
+              staticClass: "notes",
+              domProps: { value: _vm.firstMiniAnswer },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.firstMiniAnswer = $event.target.value
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "flex flex-mobile-col px-50 absolute MOBILE-B-60 bottom-60 w-60p items-center",
+              },
+              [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "w-40p" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "rounded-5 start-game start-send w-full",
+                      attrs: { disabled: _vm.firstMiniAnswer == "" },
+                      on: { click: _vm.sendFirstEmail },
+                    },
+                    [_vm._v("Ողղարկել")]
+                  ),
+                ]),
+              ]
+            ),
+          ]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.currentQuestion == _vm.secondMiniStep &&
+    !_vm.passSecondMini &&
+    _vm.currentQuestion != 10
+      ? _c("div", { staticClass: " min-h-560 relative px-15 md:px-50" }, [
+          _c(
+            "p",
+            {
+              staticClass:
+                " mt-50 text-white BraindAmanorRegular t-center text-24 md:text-48",
+            },
+            [_vm._v("Սթափության Թեստ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "p",
+            { staticClass: " mt-20 text-white max-w-500 text-custom t-center" },
+            [
+              _vm._v(
+                "Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա"
+              ),
+            ]
+          ),
           _vm._v(" "),
           _c("img", {
-            staticClass: "absolute top-30 right-150 z-200 ",
-            attrs: { src: "/images/first-mini.png", width: "400", alt: "" },
-          }),
-          _vm._v(" "),
-          _c("textarea", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.firstMiniAnswer,
-                expression: "firstMiniAnswer",
-              },
-            ],
-            staticClass: "notes",
-            domProps: { value: _vm.firstMiniAnswer },
-            on: {
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.firstMiniAnswer = $event.target.value
-              },
+            staticClass: "mt-20 img-ilusion",
+            attrs: {
+              src: "/images/green.png",
+              alt: "",
+              width: "600",
+              height: "200",
             },
           }),
           _vm._v(" "),
+          _c("img", {
+            staticClass: "absolute top-30 right-100 z-200 ilusion-personage",
+            attrs: { src: "/images/second-mini.png", width: "300", alt: "" },
+          }),
+          _vm._v(" "),
           _c(
             "div",
-            { staticClass: "flex px-50 absolute bottom-60 w-70p items-center" },
+            {
+              staticClass:
+                "flex flex-mobile-col-reverse  absolute bottom-60 w-70p items-end",
+            },
             [
-              _vm._m(0),
+              _c("div", { staticClass: "w-40p  pr-60" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.secondMiniAnswer,
+                      expression: "secondMiniAnswer",
+                    },
+                  ],
+                  staticClass:
+                    "bg-transparent text-white outline-none focus:outline-none active:outline-none border-bottom-1 border-bottom-white bb-s py-5",
+                  attrs: { type: "text", placeholder: "Գրել պատասխանը" },
+                  domProps: { value: _vm.secondMiniAnswer },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.secondMiniAnswer = $event.target.value
+                    },
+                  },
+                }),
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "w-40p" }, [
                 _c(
                   "button",
                   {
                     staticClass: "rounded-5 start-game start-send w-full",
-                    attrs: { disabled: _vm.firstMiniAnswer == "" },
-                    on: { click: _vm.sendFirstEmail },
+                    attrs: { disabled: _vm.secondMiniAnswer == "" },
+                    on: { click: _vm.sendSecondEmail },
                   },
                   [_vm._v("Ողղարկել")]
                 ),
@@ -38265,73 +38405,118 @@ var render = function () {
         ])
       : _vm._e(),
     _vm._v(" "),
-    _vm.currentQuestion == _vm.secondMiniStep && !_vm.passSecondMini
-      ? _c("div", { staticClass: " min-h-560 relative" }, [
-          _c("p", { staticClass: "pl-50 mt-50 text-white" }, [
-            _vm._v("Սթափության Թեստ"),
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "pl-50 mt-20 text-white max-w-500" }, [
-            _vm._v(
-              "Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա"
-            ),
-          ]),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "pl-50 mt-20",
-            attrs: { src: "/images/green.png", alt: "", width: "500" },
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "absolute top-30 right-100 z-200",
-            attrs: { src: "/images/second-mini.png", width: "400", alt: "" },
-          }),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex px-50 absolute bottom-60 w-70p items-end" },
-            [
-              _vm._m(1),
-              _vm._v(" "),
-              _c("div", { staticClass: "w-40p" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "rounded-5 start-game start-send w-full",
-                    attrs: { disabled: _vm.firstMiniAnswer == "" },
-                    on: { click: _vm.sendFirstEmail },
-                  },
-                  [_vm._v("Ողղարկել")]
-                ),
-              ]),
-            ]
-          ),
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.questions[_vm.currentQuestion].answered
+    _vm.currentQuestion != 10 && _vm.questions[_vm.currentQuestion].answered
       ? _c(
           "div",
           {
             staticClass:
-              "absolute min-h-560 bottom-0 z-200 right-150 flex items-end",
+              "absolute min-h-560 bottom-0 z-200 right-150 flex items-end mobile-motivy",
           },
           [
             _c("img", {
+              staticClass: "for-desktop img",
               attrs: { src: "/images/motivi.png", width: "95%", alt: "" },
             }),
             _vm._v(" "),
-            _c("p", { staticClass: "absolute top-150 w-60p pl-30 motivi" }, [
-              _vm._v(
-                "\n            " +
-                  _vm._s(
-                    _vm.isRight
-                      ? _vm.motiviQuotesRight[_vm.motiviQountForRightAnswer]
-                          .quote
-                      : _vm.motiviQuotesWrong[_vm.motiviQountForWrongAnswer]
-                          .quote
-                  )
+            _c("img", {
+              staticClass: "for-mobile",
+              attrs: { src: "/images/Bubble.png", width: "95%", alt: "" },
+            }),
+            _vm._v(" "),
+            _c(
+              "p",
+              { staticClass: "absolute top-150 w-60p pl-30 motivi arial" },
+              [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(
+                      _vm.isRight
+                        ? _vm.motiviQuotesRight[_vm.motiviQountForRightAnswer]
+                            .quote
+                        : _vm.motiviQuotesWrong[_vm.motiviQountForWrongAnswer]
+                            .quote
+                    )
+                ),
+              ]
+            ),
+          ]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.currentQuestion == 10
+      ? _c(
+          "div",
+          { staticClass: "absolute min-h-560 bottom-0 z-300 flex  top-0" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex flex-wrap items-center" }, [
+              _c(
+                "div",
+                { staticClass: "w-full md:w-half-auto pl-15 md:pl-50" },
+                [
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "BraindAmanorRegular text-white text-120 leading-none text-center md:text-left",
+                    },
+                    [_vm._v("10/" + _vm._s(_vm.rightAnswersCount))]
+                  ),
+                  _vm._v(" "),
+                  _vm._l(_vm.prize, function (item) {
+                    return _vm.rightAnswersCount <= item.max &&
+                      _vm.rightAnswersCount >= item.min
+                      ? _c(
+                          "p",
+                          {
+                            key: item.title,
+                            staticClass:
+                              "BraindAmanorRegular text-white text-36  text-center md:text-left",
+                          },
+                          [
+                            _vm._v(
+                              "\n                    " +
+                                _vm._s(item.title) +
+                                "\n                "
+                            ),
+                          ]
+                        )
+                      : _vm._e()
+                  }),
+                  _vm._v(" "),
+                  _vm._m(2),
+                ],
+                2
               ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "w-full md:w-half-auto px-15 md:px-50" },
+                [
+                  _c("img", { attrs: { src: "", alt: "" } }),
+                  _vm._v(" "),
+                  _vm._l(_vm.prize, function (item) {
+                    return _vm.rightAnswersCount <= item.max &&
+                      _vm.rightAnswersCount >= item.min
+                      ? _c(
+                          "p",
+                          { key: item.title, staticClass: "text-white" },
+                          [
+                            _vm._v(
+                              "\n                    " +
+                                _vm._s(item.desc) +
+                                "\n                "
+                            ),
+                          ]
+                        )
+                      : _vm._e()
+                  }),
+                ],
+                2
+              ),
+              _vm._v(" "),
+              _vm._m(3),
             ]),
           ]
         )
@@ -38344,7 +38529,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "w-60p  pr-60" }, [
-      _c("p", { staticClass: "desc pr-20" }, [
+      _c("p", { staticClass: "desc pr-20 " }, [
         _vm._v("Ամենալավ կենաց ասողը, կստանա  նվեր Ohanyan Brandy-ի կողմից"),
       ]),
     ])
@@ -38353,12 +38538,36 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-40p  pr-60" }, [
-      _c("input", {
-        staticClass:
-          "bg-transparent border-bottom-1 border-bottom-white bb-s py-5",
-        attrs: { type: "text", placeholder: "Գրել պատասխանը" },
-      }),
+    return _c("div", [_c("img", { attrs: { src: "logo", alt: "" } })])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-full text-center mt-50 for-desktop" }, [
+      _c(
+        "a",
+        {
+          staticClass: "rounded-5 start-game py-20 px-100 ",
+          attrs: { href: "https://www.facebook.com/sharer/sharer.php?u=" },
+        },
+        [_vm._v("Կիսվել")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-full text-center mt-50 for-mobile" }, [
+      _c(
+        "a",
+        {
+          staticClass: "rounded-5 start-game py-20 px-100 ",
+          attrs: { href: "https://www.facebook.com/sharer/sharer.php?u=" },
+        },
+        [_vm._v("Կիսվել")]
+      ),
     ])
   },
 ]
@@ -38383,24 +38592,46 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "flex min-h-560 overflow-hidden relative " }, [
-      _c("div", { staticClass: "flex flex-col  justify-start pl-50" }, [
-        _vm._m(0),
+  return _c("div", { staticClass: "height-full" }, [
+    _c(
+      "div",
+      { staticClass: "flex min-h-560 overflow-hidden relative height-full" },
+      [
+        _c(
+          "div",
+          {
+            staticClass:
+              "flex flex-col  justify-start pl-unset-for-mobile pl-50 ",
+          },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-ful mt-100 for-desktop" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "rounded-5 start-game start-page-2",
+                  on: { click: _vm.startGame },
+                },
+                [_vm._v("Դե գնացինք")]
+              ),
+            ]),
+          ]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "w-ful mt-100 " }, [
-          _c(
-            "button",
-            {
-              staticClass: "rounded-5 start-game",
-              on: { click: _vm.startGame },
-            },
-            [_vm._v("Դե գնացինք")]
-          ),
-        ]),
-      ]),
-      _vm._v(" "),
-      _vm._m(1),
+        _vm._m(1),
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "for-mobile-2" }, [
+      _c(
+        "button",
+        {
+          staticClass: "rounded-5 start-game start-page-2",
+          on: { click: _vm.startGame },
+        },
+        [_vm._v("Դե գնացինք")]
+      ),
     ]),
   ])
 }
@@ -38411,7 +38642,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "relative" }, [
       _c("img", {
-        staticClass: "mt-50",
+        staticClass: "mt-50 width-for-text",
         attrs: { src: "/images/shape.png", alt: "personage", width: "600" },
       }),
       _vm._v(" "),
@@ -38442,15 +38673,24 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          " flex items-end mt-50  justify-end absolute bottom-0 right-50",
+          " flex items-end mt-50 img-right  justify-end absolute bottom-0 right-50 h-full-mobile",
       },
       [
         _c("img", {
-          staticClass: "mt-100",
+          staticClass: "mt-100 personage-game for-desktop",
           attrs: {
             src: "/images/personage.png",
             alt: "personage",
             width: "600",
+          },
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "personage-game   for-mobile per-get-start",
+          attrs: {
+            src: "/images/personage-mobile.png",
+            alt: "personage",
+            width: "300",
           },
         }),
       ]
@@ -38479,30 +38719,40 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "flex min-h-560 overflow-hidden" }, [
-      _c("div", { staticClass: "flex flex-col w-60p justify-center pl-50" }, [
-        _c("div", { staticClass: "text-72 guess mb-50" }, [
-          _vm._v("Գուշակի՛ր կենացը"),
-        ]),
+    _c(
+      "div",
+      { staticClass: "flex start-flex min-h-560 overflow-hidden  full" },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "flex flex-col w-60p justify-center pl-50 w-full-800",
+          },
+          [
+            _c("div", { staticClass: "text-72 guess mb-50" }, [
+              _vm._v("Գուշակի՛ր կենացը"),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "description mb-50" }, [
+              _vm._v("Անցիր թեստը ու պարզիր, թե ինչքան կենացագետ ես դու"),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-full" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "rounded-5 start-game start-page",
+                  on: { click: _vm.checkLoginState },
+                },
+                [_vm._v("Սկսել Խաղը")]
+              ),
+            ]),
+          ]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "description mb-50" }, [
-          _vm._v("Անցիր թեստը ու պարզիր, թե ինչքան կենացագետ ես դու"),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "w-full" }, [
-          _c(
-            "button",
-            {
-              staticClass: "rounded-5 start-game",
-              on: { click: _vm.checkLoginState },
-            },
-            [_vm._v("Սկսել Խաղը")]
-          ),
-        ]),
-      ]),
-      _vm._v(" "),
-      _vm._m(0),
-    ]),
+        _vm._m(0),
+      ]
+    ),
   ])
 }
 var staticRenderFns = [
@@ -38512,7 +38762,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "w-40p flex items-start mt-50  justify-end " },
+      { staticClass: "w-40p flex items-start mt-50  justify-end game " },
       [
         _c("img", {
           staticClass: "mt-100 cupple_1",

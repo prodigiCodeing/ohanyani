@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Score;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -38,14 +39,20 @@ class HomeController extends Controller
         ]);
     }
     public function sendNumberMAil(Request $request){
-        dd($request);
+        Mail::raw($request->message, function ($message) {
+            $message->from('info.ohanyan@gmail.com', 'Ohanyan Team');
+            $message->to('smariamvs@gmail.com');
+            $message->subject('Quote message for Second mini quiz');
+        });
         return response()->json([
             'success'=>true
         ]);
     }
     public function saveUserProgress(Request $request){
-        dd($request);
-
+        $score = new Score();
+        $score->userId = $request->user()->id;
+        $score->score = $request->rightCount;
+        $score->save();
         return response()->json([
             'success'=>true
         ]);

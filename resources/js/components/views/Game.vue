@@ -1,75 +1,97 @@
 <template>
     <div class=" min-h-560 overflow-hidden relative ">
-        <div :class="['relative  min-h-560 ', questions[currentQuestion].answered ? 'blure-custom' : '' ]" v-if="(currentQuestion != firstMiniStep || passFirstMini) && (currentQuestion != secondMiniStep || passSecondMini)">
+        <div :class="['relative  min-h-560 ', questions[currentQuestion].answered ? 'blure-custom' : '' ]" v-if="(currentQuestion != firstMiniStep || passFirstMini) && (currentQuestion != secondMiniStep || passSecondMini ) && currentQuestion != 10">
             <div class="flex  w-full justify-between px-50 pt-30">
                 <div class="answer">Հարց <span class="text-textDefault">{{ currentQuestion + 1 }}</span></div>
                 <div class="flex justify-end">
                     <div v-for="n in cupCount" class="mx-5"><img src="/images/cup1.png" width="20" alt=""></div>
                 </div>
             </div>
-            <div class="flex  w-full justify-between px-150 pt-50 text-center answer">
+            <div class="flex  w-full justify-between pt-mobile px-150-mobile font-size-48-mobile px-150 pt-50 text-center answer">
                 {{ questions[currentQuestion].question }}
             </div>
-            <div class="flex  w-full justify-between px-150 pt-50 text-center flex-wrap">
-                <button class="rounded-5 w-40p bg-white text-black px-30 py-10 text"
+            <div class="flex flex-dir-for-buttons font-size-48-mobile  w-full justify-between px-150 px-150-mobile pt-50 text-center flex-wrap">
+                <button class="rounded-5 w-40p bg-white text-black px-30 py-10 text arial"
                         v-bind:class="[{ right: questions[currentQuestion].answered &&  questions[currentQuestion].answers[0].isRight }, {wrong:questions[currentQuestion].answered && questions[currentQuestion].answerType == 0 && !questions[currentQuestion].answers[0].isRight }]"
                         v-on:click="()=>checkAnswer(0)" :disabled="questions[currentQuestion].answered">
                     {{ questions[currentQuestion].answers[0].answer }}
                 </button>
-                <button class="rounded-5 w-40p bg-white text-black px-30 py-10 text"
+                <button class="rounded-5 w-40p bg-white text-black px-30 py-10 text arial mt-30-mobile"
                         v-bind:class="[{ right: questions[currentQuestion].answered &&  questions[currentQuestion].answers[1].isRight }, {wrong:questions[currentQuestion].answered && questions[currentQuestion].answerType == 1 && !questions[currentQuestion].answers[1].isRight }]"
                         v-on:click="()=>checkAnswer(1)" :disabled="questions[currentQuestion].answered">
                     {{ questions[currentQuestion].answers[1].answer }}
                 </button>
-                <button class="rounded-5 w-40p bg-white  text-black px-30 py-10 mt-30 text"
+                <button class="rounded-5 w-40p bg-white  text-black px-30 py-10 mt-30 text arial"
                         v-bind:class="[{ right: questions[currentQuestion].answered &&  questions[currentQuestion].answers[2].isRight }, {wrong:questions[currentQuestion].answered && questions[currentQuestion].answerType == 2 && !questions[currentQuestion].answers[2].isRight }]"
                         v-on:click="()=>checkAnswer(2)" :disabled="questions[currentQuestion].answered">
                     {{ questions[currentQuestion].answers[2].answer }}
                 </button>
-                <button class="rounded-5 w-40p bg-white text-black px-30 py-10 mt-30 text"
+                <button class="rounded-5 w-40p bg-white text-black px-30 py-10 mt-30 text arial"
                         v-bind:class="[{ right: questions[currentQuestion].answered &&  questions[currentQuestion].answers[3].isRight }, {wrong:questions[currentQuestion].answered && questions[currentQuestion].answerType == 3 && !questions[currentQuestion].answers[3].isRight }]"
                         v-on:click="()=>checkAnswer(3)" :disabled="questions[currentQuestion].answered">
                     {{ questions[currentQuestion].answers[3].answer }}
                 </button>
             </div>
         </div>
-        <div v-if="currentQuestion == firstMiniStep && !passFirstMini" class=" min-h-560  relative overflow-hidden ">
+        <div v-if="currentQuestion == firstMiniStep && !passFirstMini  && currentQuestion  != 10" class=" min-h-560  height-full relative overflow-hidden ">
             <p class="absolute heading-text">Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ</p>
-            <img class="absolute top-30 right-150 z-200 " src="/images/first-mini.png" width="400" alt="">
+            <img class="absolute top-30 mobile-bottom right-100 z-200 " src="/images/first-mini.png" width="400" alt="">
             <textarea class="notes" v-model="firstMiniAnswer"></textarea>
-            <div class="flex px-50 absolute bottom-60 w-70p items-center">
+            <div class="flex flex-mobile-col px-50 absolute MOBILE-B-60 bottom-60 w-60p items-center">
                 <div class="w-60p  pr-60">
-                    <p class="desc pr-20">Ամենալավ կենաց ասողը, կստանա  նվեր Ohanyan Brandy-ի կողմից</p>
+                    <p class="desc pr-20 ">Ամենալավ կենաց ասողը, կստանա  նվեր Ohanyan Brandy-ի կողմից</p>
                 </div>
                 <div class="w-40p">
                     <button class="rounded-5 start-game start-send w-full" :disabled="firstMiniAnswer == '' " v-on:click="sendFirstEmail">Ողղարկել</button>
                 </div>
-
             </div>
         </div>
-        <div v-if="currentQuestion == secondMiniStep && !passSecondMini" class=" min-h-560 relative">
-
-
-            <p class="pl-50 mt-50 text-white">Սթափության Թեստ</p>
-            <p class="pl-50 mt-20 text-white max-w-500">Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա</p>
-            <img src="/images/green.png" alt="" class="pl-50 mt-20" width="500">
-            <img class="absolute top-30 right-100 z-200" src="/images/second-mini.png" width="400" alt="">
-             <div class="flex px-50 absolute bottom-60 w-70p items-end">
+        <div v-if="currentQuestion == secondMiniStep && !passSecondMini && currentQuestion  != 10 " class=" min-h-560 relative px-15 md:px-50">
+            <p class=" mt-50 text-white BraindAmanorRegular t-center text-24 md:text-48">Սթափության Թեստ</p>
+            <p class=" mt-20 text-white max-w-500 text-custom t-center">Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա</p>
+            <img src="/images/green.png" alt="" class="mt-20 img-ilusion" width="600" height="200">
+            <img class="absolute top-30 right-100 z-200 ilusion-personage" src="/images/second-mini.png" width="300" alt="">
+             <div class="flex flex-mobile-col-reverse  absolute bottom-60 w-70p items-end">
                  <div class="w-40p  pr-60">
-                     <input type="text" class="bg-transparent border-bottom-1 border-bottom-white bb-s py-5" placeholder="Գրել պատասխանը">
+                     <input type="text" class="bg-transparent text-white outline-none focus:outline-none active:outline-none border-bottom-1 border-bottom-white bb-s py-5" placeholder="Գրել պատասխանը" v-model="secondMiniAnswer">
                  </div>
                 <div class="w-40p">
-                    <button class="rounded-5 start-game start-send w-full" :disabled="firstMiniAnswer == '' " v-on:click="sendFirstEmail">Ողղարկել</button>
+                    <button class="rounded-5 start-game start-send w-full" :disabled="secondMiniAnswer == '' " v-on:click="sendSecondEmail">Ողղարկել</button>
                 </div>
-
             </div>
-
         </div>
-        <div class="absolute min-h-560 bottom-0 z-200 right-150 flex items-end"
-             v-if="questions[currentQuestion].answered">
-            <img src="/images/motivi.png" width="95%" class="" alt="">
-            <p class="absolute top-150 w-60p pl-30 motivi">
+        <div class="absolute min-h-560 bottom-0 z-200 right-150 flex items-end mobile-motivy"
+             v-if="currentQuestion !=10  && questions[currentQuestion].answered ">
+            <img src="/images/motivi.png" width="95%" class="for-desktop img" alt="">
+            <img src="/images/Bubble.png" width="95%" class="for-mobile" alt="">
+            <p class="absolute top-150 w-60p pl-30 motivi arial">
                 {{ isRight ? motiviQuotesRight[motiviQountForRightAnswer].quote : motiviQuotesWrong[motiviQountForWrongAnswer].quote }}</p>
+        </div>
+        <div class="absolute min-h-560 bottom-0 z-300 flex  top-0"
+             v-if="currentQuestion  == 10">
+            <div>
+                <img src="logo" alt="">
+            </div>
+            <div class="flex flex-wrap items-center">
+                <div class="w-full md:w-half-auto pl-15 md:pl-50">
+                    <p class="BraindAmanorRegular text-white text-120 leading-none text-center md:text-left">10/{{rightAnswersCount}}</p>
+                    <p class="BraindAmanorRegular text-white text-36  text-center md:text-left"  v-for="item in prize" :key="item.title" v-if="rightAnswersCount <= item.max && rightAnswersCount >=  item.min">
+                        {{item.title}}
+                    </p>
+                    <div class="w-full text-center mt-50 for-desktop">
+                        <a class="rounded-5 start-game py-20 px-100 " href="https://www.facebook.com/sharer/sharer.php?u=">Կիսվել</a>
+                    </div>
+                </div>
+                <div class="w-full md:w-half-auto px-15 md:px-50">
+                    <img src="" alt="">
+                    <p class="text-white" v-for="item in prize" :key="item.title" v-if="rightAnswersCount <= item.max && rightAnswersCount >=  item.min">
+                        {{item.desc}}
+                    </p>
+                </div>
+                <div class="w-full text-center mt-50 for-mobile">
+                    <a class="rounded-5 start-game py-20 px-100 " href="https://www.facebook.com/sharer/sharer.php?u=">Կիսվել</a>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -195,7 +217,7 @@ export default {
                     answerType: ""
                 },
             ],
-            currentQuestion: 0,
+            currentQuestion:0,
             cupCount: 2,
             motiviQuotesRight: [
                 {quote: "Փաստորեն՝ լավ ես տիրապետում հայկական կենացներին։ Զարմացնում ես։"},
@@ -212,7 +234,7 @@ export default {
             firstMiniStep: 3,
             firstMiniAnswer: "",
             passSecondMini: false,
-            secondMiniStep: 0,
+            secondMiniStep: 8,
             secondMiniAnswer: "",
             rightAnswersCount: 0,
             isRight: false,
@@ -252,10 +274,9 @@ export default {
             self.isRight = self.questions[self.currentQuestion].answers[e].isRight
 
             setTimeout(function (){
-                if(self.currentQuestion + 1 != 9){
+                if(self.currentQuestion + 1 < 10){
                     self.cupCount++;
-                    self.currentQuestion++;
-                    if(self.isRight) {
+                     if(self.isRight) {
                         self.motiviQountForRightAnswer = self.motiviQountForRightAnswer == 2 ? 0 : self.motiviQountForRightAnswer + 1;
                         self.rightAnswersCount++
                     }
@@ -265,8 +286,15 @@ export default {
                     if(self.isRight) {
                         self.rightAnswersCount++
                     }
-
-                }
+                     axios
+                        .post('/save-progress', {
+                            rightCount:self.rightAnswersCount
+                        })
+                        .then(response => {
+                            console.log(response)
+                        })
+                 }
+                self.currentQuestion++;
 
 
             },4000)
@@ -285,7 +313,17 @@ export default {
                 .catch(error => console.log(error));
         },
         sendSecondEmail(){
-
+            const self = this
+            axios
+                .post('/send-numbers-mail', {
+                    message:self.secondMiniAnswer
+                })
+                .then(response => {
+                    if(response.data.success){
+                        self.passSecondMini = true
+                    }
+                })
+                .catch(error => console.log(error));
         },
     },
     computed: {

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .bg-custom-image {
     background-image: url("/images/bg.png");
     background-size: cover;
@@ -17,7 +18,21 @@
     font-family: MyriadPro;
     src: url('/fonts/MYRIADPRO-REGULAR.woff');
 }
-
+.arial{
+    font-family: Arial;
+}
+*{
+    font-family: MyriadPro;
+}
+.MyriadPro{
+    font-family: MyriadPro;
+}
+.img-ilusion{
+    height: 200px!important;
+}
+.BraindAmanorRegular{
+    font-family: BraindAmanorRegular;
+}
 .guess {
     font-family: "BraindAmanorRegular";
     color: rgb(255, 255, 255);
@@ -289,7 +304,7 @@
     color: rgb(46, 46, 46);
     line-height: 1.587;
     text-align: left;
-    top: 100px;
+    top: 95px;
     left:50px;
     z-index: 9;
     background: white;
@@ -309,4 +324,295 @@
 }
 .bb-s{
     border-bottom: 2px solid white;
+}
+.for-mobile-2{
+    display: none;
+}
+@media screen  and (max-width: 1000px) {
+    .personage-game{
+        width: 450px;
+    }
+    .width-for-text{
+        width: 460px;
+    }
+    .width-for-text + .start-text{
+        font-size: 14px;
+    }
+    .img-right{
+        right: 0px;
+    }
+    .img-ilusion{
+        width:350px;
+    }
+    .flex-mobile-col-reverse {
+        width: calc(100% - 50px);
+        flex-direction: column;
+        align-items: self-start;
+    }
+    .flex-mobile-col-reverse > div, .flex-mobile-col-reverse   input {
+        padding-right: 0;
+        width: 350px;
+        margin-top: 30px;
+     }
+    .flex-mobile-col-reverse   {
+        bottom: 30px;
+    }
+}
+.for-mobile{
+    display: none;
+}
+@media screen  and (max-width: 850px){
+    .motivi{
+        top: 200px;
+    }
+}
+@media screen  and (max-width: 800px) {
+    .t-center{
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .flex-mobile-col-reverse > div{
+        padding-right: 0;
+    }
+    .img-ilusion{
+        width:100%;
+        height: 300px;
+    }
+    .start-flex {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
+    .for-height {
+        height: 100vh;
+    }
+
+    .h-full-mobile, .height-full {
+        height: 100%;
+    }
+
+    .game {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cupple_1, .cupple_2 {
+        width: 180px;
+    }
+
+    .w-full-800 {
+        width: 100%;
+        margin-top: 30px;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .guess {
+        text-align: center;
+    }
+
+    .description {
+        padding: 0 50px;
+        text-align: center;
+    }
+
+    .for-height > div {
+        height: 100%;
+    }
+
+    .start-flex {
+        justify-content: center;
+        height: 100%;
+    }
+
+    .game {
+        margin-top: 0;
+    }
+
+    .for-desktop {
+        display: none;
+    }
+
+    .for-mobile {
+        display: block;
+    }
+
+    .h-full-mobile {
+        bottom: unset;
+        top: 100px;
+    }
+
+    .start-page-2 {
+        width: 250px;
+    }
+
+    .for-mobile-2 {
+        display: block;
+        width: 100%;
+        position: absolute;
+        bottom: 50px;
+        text-align: center;
+    }
+
+    .pl-unset-for-mobile {
+        padding-left: 10px;
+    }
+
+    .width-for-text {
+        width: 412px;
+        height: 260px;
+    }
+
+    .per-get-start {
+        width: 410px;
+    }
+
+    .flex-dir-for-buttons {
+        flex-direction: column;
+    }
+
+    .font-size-48-mobile {
+        font-size: 36px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .flex-dir-for-buttons button {
+        width: 100%;
+    }
+
+    .mt-30-mobile {
+        margin-top: 30px;
+    }
+
+    .px-150-mobile {
+        padding: 0 15px;
+    }
+
+    .pt-mobile {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    . height-full {
+        height: 100%;
+    }
+
+    .flex-mobile-col {
+        flex-direction: column-reverse;
+    }
+
+    .flex-mobile-col > div {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .flex-mobile-col > div {
+        padding-right: 0;
+    }
+
+    .mobile-bottom {
+        top: 435px;
+        right: 0;
+    }
+
+    .desc {
+        font-size: 16px;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .MOBILE-B-60 {
+        bottom: 300px;
+    }
+
+    .flex-mobile-col-reverse > div, .flex-mobile-col-reverse > div input {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .flex-mobile-col-reverse {
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% - 100px);
+        top: 290px;
+    }
+    .ilusion-personage{
+        top: 510px;
+        right: 0;
+    }
+    .text-custom{
+        font-size: 14px;
+    }
+    .img-ilusion {
+        height: 160px!important;
+    }
+    .flex-mobile-col-reverse {
+        width: calc(100% - 30px);
+        flex-direction: column;
+        align-items: self-start;
+    }
+}
+@media screen  and (max-width: 555px) {
+    .per-get-start{
+        width: 340px;
+    }
+    .width-for-text {
+         height: 230px;
+    }
+    .mobile-bottom{
+        right: 0;
+        top: 540px;
+    }
+    .MOBILE-B-60{
+        width: 100%;
+        bottom: 360px;
+    }
+}
+@media screen  and (max-width: 500px){
+    .mobile-bottom{
+        top:540px;
+        right: 0;
+        width:87%;
+    }
+    textarea{
+        width: calc(100% - 100px)!important;
+    }
+    .guess{
+       font-size:36px ;
+        padding: 0 50px;
+        margin-bottom: 0;
+    }
+    .description{
+      font-size: 18px;
+        margin-top: 15px;
+    }
+    .start-page{
+        width: 215px;
+    }
+    .start-game{
+        height: 50px;
+    }
+    .cupple_1,.cupple_2{
+        width: 150px;
+    }
+    .h-full-mobile {
+        bottom: unset;
+        top: -45px;
+    }
+    .per-get-start {
+         width: 289px;
+     }
+    .width-for-text {
+        width: 267px;
+        height: 318px;
+    }
+
+}
+@media screen  and (max-width: 350px) {
+    .width-for-text {
+        width: 206px;
+        height: 354px;
+    }
 }

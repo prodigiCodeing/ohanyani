@@ -15,6 +15,8 @@ class FaceBookController extends Controller
      */
     public function loginUsingFacebook()
     {
+//    dd( 1);
+
         return Socialite::driver('facebook')->redirect();
     }
 
