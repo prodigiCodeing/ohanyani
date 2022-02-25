@@ -2049,6 +2049,7 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
   name: "Game",
   data: function data() {
     return {
+      imgSrc: "",
       questions: [{
         question: "Ո՞րն է հայկական խնջույքի առաջին պարտադիր կենացը.",
         answers: [{
@@ -2220,7 +2221,7 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
         answered: false,
         answerType: ""
       }],
-      currentQuestion: 10,
+      currentQuestion: 0,
       cupCount: 2,
       motiviQuotesRight: [{
         quote: "Փաստորեն՝ լավ ես տիրապետում հայկական կենացներին։ Զարմացնում ես։"
@@ -2274,6 +2275,10 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
       self.questions[self.currentQuestion].answerType = e;
       self.isRight = self.questions[self.currentQuestion].answers[e].isRight;
       setTimeout(function () {
+        var imgSrc = "/images/Ohanyan_xax_animation-character_2.gif";
+        document.getElementById('img').src = imgSrc;
+      }, 100);
+      setTimeout(function () {
         if (self.currentQuestion + 1 < 10) {
           self.cupCount++;
 
@@ -2296,6 +2301,7 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
         }
 
         self.currentQuestion++;
+        document.getElementById('img').src = "";
       }, 4000);
     },
     sendFirstEmail: function sendFirstEmail() {
@@ -2427,7 +2433,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       this.$router.push('/start-game');
     },
     checkLoginState: function checkLoginState() {
-      window.location.href = "/facebook/auth";
+      this.$router.push('/start-game'); // window.location.href = "/facebook/auth";
     }
   }
 });
@@ -38459,11 +38465,7 @@ var render = function () {
             _vm._v(" "),
             _c("img", {
               staticClass: "img img-main ",
-              attrs: {
-                src: "/images/Ohanyan_xax_animation-character_2.gif",
-                width: "65%",
-                alt: "",
-              },
+              attrs: { src: "", width: "65%", id: "img", alt: "" },
             }),
             _vm._v(" "),
             _c(

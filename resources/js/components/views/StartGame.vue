@@ -28,7 +28,8 @@ export default {
             this.$router.push('/start-game');
         },
         checkLoginState() {
-             window.location.href = "/facebook/auth";
+            this.$router.push('/start-game');
+             // window.location.href = "/facebook/auth";
         }
     }
 }

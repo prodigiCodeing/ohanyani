@@ -63,7 +63,7 @@
         <div class="absolute min-h-560 bottom-0 z-200 right-0 flex items-end mobile-motivy"
              v-if="currentQuestion !=10  && questions[currentQuestion].answered ">
             <img src="/images/motivi_1.png" width="100%" class="img absolute  top-50  -left-450 pl-30 motivi" alt="">
-            <img src="/images/Ohanyan_xax_animation-character_2.gif" width="65%" class="img img-main " alt="">
+            <img  src="" width="65%" class="img img-main " id="img" alt="">
 <!--            <img src="/images/Bubble.png" width="95%" class="for-mobile" alt="">-->
             <p class="absolute top-100 w-70p pl-30 motivi arial -left-410">
                 {{ isRight ? motiviQuotesRight[motiviQountForRightAnswer].quote : motiviQuotesWrong[motiviQountForWrongAnswer].quote }}</p>
@@ -106,6 +106,7 @@ export default {
     name: "Game",
     data: function () {
         return {
+            imgSrc:"",
             questions: [
                 {
                     question: "Ո՞րն է հայկական խնջույքի առաջին պարտադիր կենացը.",
@@ -218,7 +219,7 @@ export default {
                     answerType: ""
                 },
             ],
-            currentQuestion:10,
+            currentQuestion:0,
             cupCount: 2,
             motiviQuotesRight: [
                 {quote: "Փաստորեն՝ լավ ես տիրապետում հայկական կենացներին։ Զարմացնում ես։"},
@@ -270,9 +271,13 @@ export default {
     methods: {
         checkAnswer(e) {
             const self = this
-            self.questions[self.currentQuestion].answered = true
+             self.questions[self.currentQuestion].answered = true
             self.questions[self.currentQuestion].answerType = e
             self.isRight = self.questions[self.currentQuestion].answers[e].isRight
+            setTimeout(function (){
+                let imgSrc = "/images/Ohanyan_xax_animation-character_2.gif" ;
+                document.getElementById('img').src = imgSrc;
+            },100)
 
             setTimeout(function (){
                 if(self.currentQuestion + 1 < 10){
@@ -296,7 +301,7 @@ export default {
                         })
                  }
                 self.currentQuestion++;
-
+                document.getElementById('img').src="";
 
             },4000)
         },
