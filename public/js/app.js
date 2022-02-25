@@ -2027,6 +2027,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
   'X-Requested-With': 'XMLHttpRequest'
@@ -2206,7 +2207,7 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
         answered: false,
         answerType: ""
       }],
-      currentQuestion: 0,
+      currentQuestion: 10,
       cupCount: 2,
       motiviQuotesRight: [{
         quote: "Փաստորեն՝ լավ ես տիրապետում հայկական կենացներին։ Զարմացնում ես։"
@@ -38081,9 +38082,9 @@ var render = function () {
               },
               [
                 _vm._v(
-                  "\n            " +
+                  "\n                " +
                     _vm._s(_vm.questions[_vm.currentQuestion].question) +
-                    "\n        "
+                    "\n            "
                 ),
               ]
             ),
@@ -38125,11 +38126,11 @@ var render = function () {
                   },
                   [
                     _vm._v(
-                      "\n                " +
+                      "\n                    " +
                         _vm._s(
                           _vm.questions[_vm.currentQuestion].answers[0].answer
                         ) +
-                        "\n            "
+                        "\n                "
                     ),
                   ]
                 ),
@@ -38164,11 +38165,11 @@ var render = function () {
                   },
                   [
                     _vm._v(
-                      "\n                " +
+                      "\n                    " +
                         _vm._s(
                           _vm.questions[_vm.currentQuestion].answers[1].answer
                         ) +
-                        "\n            "
+                        "\n                "
                     ),
                   ]
                 ),
@@ -38203,11 +38204,11 @@ var render = function () {
                   },
                   [
                     _vm._v(
-                      "\n                " +
+                      "\n                    " +
                         _vm._s(
                           _vm.questions[_vm.currentQuestion].answers[2].answer
                         ) +
-                        "\n            "
+                        "\n                "
                     ),
                   ]
                 ),
@@ -38242,11 +38243,11 @@ var render = function () {
                   },
                   [
                     _vm._v(
-                      "\n                " +
+                      "\n                    " +
                         _vm._s(
                           _vm.questions[_vm.currentQuestion].answers[3].answer
                         ) +
-                        "\n            "
+                        "\n                "
                     ),
                   ]
                 ),
@@ -38410,25 +38411,32 @@ var render = function () {
           "div",
           {
             staticClass:
-              "absolute min-h-560 bottom-0 z-200 right-150 flex items-end mobile-motivy",
+              "absolute min-h-560 bottom-0 z-200 right-0 flex items-end mobile-motivy",
           },
           [
             _c("img", {
-              staticClass: "for-desktop img",
-              attrs: { src: "/images/motivi.png", width: "95%", alt: "" },
+              staticClass: "img absolute  top-50  -left-450 pl-30 motivi",
+              attrs: { src: "/images/motivi_1.png", width: "100%", alt: "" },
             }),
             _vm._v(" "),
             _c("img", {
-              staticClass: "for-mobile",
-              attrs: { src: "/images/Bubble.png", width: "95%", alt: "" },
+              staticClass: "img img-main ",
+              attrs: {
+                src: "/images/Ohanyan_xax_animation-character_2.gif",
+                width: "65%",
+                alt: "",
+              },
             }),
             _vm._v(" "),
             _c(
               "p",
-              { staticClass: "absolute top-150 w-60p pl-30 motivi arial" },
+              {
+                staticClass:
+                  "absolute top-100 w-70p pl-30 motivi arial -left-410",
+              },
               [
                 _vm._v(
-                  "\n            " +
+                  "\n                " +
                     _vm._s(
                       _vm.isRight
                         ? _vm.motiviQuotesRight[_vm.motiviQountForRightAnswer]
@@ -38446,11 +38454,14 @@ var render = function () {
     _vm.currentQuestion == 10
       ? _c(
           "div",
-          { staticClass: "absolute min-h-560 bottom-0 z-300 flex  top-0" },
+          {
+            staticClass:
+              "absolute min-h-560 bottom-0 z-300 flex flex-wrap top-0",
+          },
           [
             _vm._m(1),
             _vm._v(" "),
-            _c("div", { staticClass: "flex flex-wrap items-center" }, [
+            _c("div", { staticClass: "flex flex-wrap items-center w-full" }, [
               _c(
                 "div",
                 { staticClass: "w-full md:w-half-auto pl-15 md:pl-50" },
@@ -38476,9 +38487,9 @@ var render = function () {
                           },
                           [
                             _vm._v(
-                              "\n                    " +
+                              "\n                        " +
                                 _vm._s(item.title) +
-                                "\n                "
+                                "\n                    "
                             ),
                           ]
                         )
@@ -38504,9 +38515,9 @@ var render = function () {
                           { key: item.title, staticClass: "text-white" },
                           [
                             _vm._v(
-                              "\n                    " +
+                              "\n                        " +
                                 _vm._s(item.desc) +
-                                "\n                "
+                                "\n                    "
                             ),
                           ]
                         )
@@ -38538,7 +38549,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("img", { attrs: { src: "logo", alt: "" } })])
+    return _c("div", { staticClass: "w-full h-auto" }, [
+      _c("img", {
+        staticClass: "pl-15 md:pl-50",
+        attrs: { src: "/images/logo.png", alt: "", width: "150px" },
+      }),
+    ])
   },
   function () {
     var _vm = this

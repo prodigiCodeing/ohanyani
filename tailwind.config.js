@@ -117,6 +117,7 @@ module.exports = {
                 '-300':'-300px',
                 '-320':'-320px',
                 '-410':'-410px',
+                '-450':'-450px',
                 'show-more':"calc(50% - 27.5px)",
                 'show-more2':"calc(48% - 27.5px)",
                 'show-more3':"calc(33% - 27.5px);",

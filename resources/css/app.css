@@ -22,7 +22,7 @@
     font-family: Arial;
 }
 *{
-    font-family: MyriadPro;
+    font-family: Arial;
 }
 .MyriadPro{
     font-family: MyriadPro;
@@ -357,19 +357,38 @@
     .flex-mobile-col-reverse   {
         bottom: 30px;
     }
+    p.motivi {
+        left: -219px;
+
+    }
+    img.img{
+        left: -249px;
+    }
+    img.img-main{
+        position: relative;
+        left: 197px;
+    }
 }
 .for-mobile{
     display: none;
 }
 @media screen  and (max-width: 850px){
     .motivi{
-        top: 200px;
+        /*top: 200px;*/
     }
 }
 @media screen  and (max-width: 800px) {
     .t-center{
         text-align: center;
         margin: 0 auto;
+    }
+    img.img{
+        width: 390px;
+        left: -229px;
+    }
+    img.img-main{
+        width: 514px;
+        left: 139px;
     }
 
     .flex-mobile-col-reverse > div{
@@ -554,6 +573,41 @@
         align-items: self-start;
     }
 }
+@media screen  and (max-width: 727px) {
+
+     img.img {
+        width: 390px;
+         z-index: 1;
+    }
+    img.img-main {
+        width: 461px;
+        left: 117px;
+    }
+    p.motivi {
+        left: -186px;
+        top: 73px;
+    }
+}
+@media screen  and (max-width: 656px) {
+    img.img {
+        top: -77px;
+        width: 341px;
+        left: -151px;
+        z-index: 1;
+
+    }
+    p.motivi {
+        font-size: 16px;
+        left: -127px;
+        top: -36px;
+    }
+    img.img-main {
+        width: 417px;
+        left: 70px;
+        top: unset;
+    }
+
+}
 @media screen  and (max-width: 555px) {
     .per-get-start{
         width: 340px;
@@ -568,6 +622,22 @@
     .MOBILE-B-60{
         width: 100%;
         bottom: 360px;
+    }
+    img.img {
+        top: -77px;
+        width: 341px;
+        left: -151px;
+        z-index: 1;
+
+    }
+    .motivi {
+        font-size: 16px;
+        left: -131px;
+    }
+    img.img-main {
+        width: 364px;
+        left: 70px;
+        top: unset;
     }
 }
 @media screen  and (max-width: 500px){
@@ -609,6 +679,42 @@
         height: 318px;
     }
 
+    img.img {
+        top: -143px;
+        width: 341px;
+        left: -97px;
+        z-index: 1;
+
+    }
+    p.motivi {
+        left: -76px;
+        top: -101px;
+    }
+    img.img-main {
+        width: 364px;
+        left: 70px;
+        top: unset;
+    }
+
+
+}
+@media screen  and (max-width: 450px) {
+    img.img {
+        top: -106px;
+        width: 285px;
+        left: -17px;
+        z-index: 1;
+    }
+    p.motivi {
+        left: 7px;
+        top: -82px;
+        font-size: 14px;
+    }
+    img.img-main {
+        width: 364px;
+        left: 70px;
+        top: unset;
+    }
 }
 @media screen  and (max-width: 350px) {
     .width-for-text {
