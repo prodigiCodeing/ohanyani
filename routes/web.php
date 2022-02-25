@@ -26,6 +26,8 @@ Route::get("/{any}",function (){
     return view("index");
 })->middleware('auth');
 
+
+
 Route::post('/send-quote',[\App\Http\Controllers\HomeController::class, 'sendQuote']);
 Route::post('/send-numbers-mail',[\App\Http\Controllers\HomeController::class, 'sendNumberMAil']);
 Route::post('/save-progress',[\App\Http\Controllers\HomeController::class, 'saveUserProgress']);

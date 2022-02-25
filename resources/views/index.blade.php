@@ -16,7 +16,25 @@
         </div>
 
     </div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '471708087772123',
+                xfbml      : true,
+                version    : 'v13.0'
+            });
 
+            // ADD ADDITIONAL FACEBOOK CODE HERE
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
 <script src="./js/app.js"></script>
 </body>
