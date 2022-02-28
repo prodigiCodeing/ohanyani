@@ -269,6 +269,7 @@ export default {
     },
     methods: {
         checkAnswer(e) {
+
             const self = this
              self.questions[self.currentQuestion].answered = true
             self.questions[self.currentQuestion].answerType = e
