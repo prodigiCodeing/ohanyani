@@ -96,7 +96,6 @@
         </div>
     </div>
 </template>
-
 <script>
 import axios from 'axios'
 axios.defaults.headers.common = {
@@ -278,7 +277,6 @@ export default {
                 let imgSrc = "/images/Ohanyan_xax_animation-character_2.gif" ;
                 document.getElementById('img').src = imgSrc;
             },100)
-
             setTimeout(function (){
                 if(self.currentQuestion + 1 < 10){
                     self.cupCount++;
@@ -302,7 +300,6 @@ export default {
                  }
                 self.currentQuestion++;
                 document.getElementById('img').src="";
-
             },4000)
         },
         sendFirstEmail(){
@@ -333,11 +330,9 @@ export default {
         },
     },
     computed: {
-
     },
     created() {
         this.questions.sort( () => .5 - Math.random() )
-
     }
 }
 </script>
