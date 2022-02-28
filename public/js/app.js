@@ -2040,6 +2040,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
   'X-Requested-With': 'XMLHttpRequest'
@@ -2264,10 +2306,23 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
         max: 10,
         title: "Վարպետ",
         desc: "Ներեցեք, Դուք պրոֆեսիոնալ թամադա՞ եք։ Այսպիսի արդյունք անգամ քաղաքի լավագույն թամադաները չէին ունենա։ Հիացած ենք քո գիտելիքներով։ Պատկերացնում ենք, թե որքան շատ առիթներ ես ունեցել սեղանապետ ու թամադա լինելու և սուր միտքդ ցույց տալու։"
-      }]
+      }],
+      firstPage: true,
+      secondPage: false,
+      gameStep: false
     };
   },
   methods: {
+    setSecondStep: function setSecondStep() {
+      this.firstPage = false;
+      this.secondPage = true;
+      this.gameStep = false;
+    },
+    setThirdStep: function setThirdStep() {
+      this.firstPage = false;
+      this.secondPage = false;
+      this.gameStep = true;
+    },
     checkAnswer: function checkAnswer(e) {
       var self = this;
       self.questions[self.currentQuestion].answered = true;
@@ -2301,7 +2356,7 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
 
         self.currentQuestion++;
         document.getElementById('img').src = "";
-      }, 4000);
+      }, self.currentQuestion == 1 || self.currentQuestion == 5 || self.currentQuestion == 8 ? 4000 : 1000);
     },
     sendFirstEmail: function sendFirstEmail() {
       var self = this;
@@ -38074,517 +38129,742 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: " min-h-560 overflow-hidden relative " }, [
-    (_vm.currentQuestion != _vm.firstMiniStep || _vm.passFirstMini) &&
-    (_vm.currentQuestion != _vm.secondMiniStep || _vm.passSecondMini) &&
-    _vm.currentQuestion != 10
-      ? _c(
-          "div",
-          {
-            class: [
-              "relative  min-h-560 ",
-              _vm.questions[_vm.currentQuestion].answered ? "blure-custom" : "",
-            ],
-          },
-          [
-            _c(
-              "div",
-              { staticClass: "flex  w-full justify-between px-50 pt-30" },
-              [
-                _c("div", { staticClass: "answer" }, [
-                  _vm._v("Հարց "),
-                  _c("span", { staticClass: "text-textDefault" }, [
-                    _vm._v(_vm._s(_vm.currentQuestion + 1)),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "flex justify-end" },
-                  _vm._l(_vm.cupCount, function (n) {
-                    return _c("div", { staticClass: "mx-5" }, [
-                      _c("img", {
-                        attrs: {
-                          src: "/images/cup1.png",
-                          width: "20",
-                          alt: "",
-                        },
-                      }),
-                    ])
-                  }),
-                  0
-                ),
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "flex  w-full justify-between pt-mobile px-150-mobile font-size-48-mobile px-150 pt-50 text-center answer",
-              },
-              [
-                _vm._v(
-                  "\n            " +
-                    _vm._s(_vm.questions[_vm.currentQuestion].question) +
-                    "\n        "
-                ),
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "flex flex-dir-for-buttons font-size-48-mobile  w-full justify-between px-150 px-150-mobile pt-50 text-center flex-wrap",
-              },
-              [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "rounded-5 w-40p bg-white text-black px-30 py-10 text arial",
-                    class: [
-                      {
-                        right:
-                          _vm.questions[_vm.currentQuestion].answered &&
-                          _vm.questions[_vm.currentQuestion].answers[0].isRight,
-                      },
-                      {
-                        wrong:
-                          _vm.questions[_vm.currentQuestion].answered &&
-                          _vm.questions[_vm.currentQuestion].answerType == 0 &&
-                          !_vm.questions[_vm.currentQuestion].answers[0]
-                            .isRight,
-                      },
-                    ],
-                    attrs: {
-                      disabled: _vm.questions[_vm.currentQuestion].answered,
-                    },
-                    on: {
-                      click: function () {
-                        return _vm.checkAnswer(0)
-                      },
-                    },
-                  },
-                  [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(
-                          _vm.questions[_vm.currentQuestion].answers[0].answer
-                        ) +
-                        "\n            "
-                    ),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "rounded-5 w-40p bg-white text-black px-30 py-10 text arial mt-30-mobile",
-                    class: [
-                      {
-                        right:
-                          _vm.questions[_vm.currentQuestion].answered &&
-                          _vm.questions[_vm.currentQuestion].answers[1].isRight,
-                      },
-                      {
-                        wrong:
-                          _vm.questions[_vm.currentQuestion].answered &&
-                          _vm.questions[_vm.currentQuestion].answerType == 1 &&
-                          !_vm.questions[_vm.currentQuestion].answers[1]
-                            .isRight,
-                      },
-                    ],
-                    attrs: {
-                      disabled: _vm.questions[_vm.currentQuestion].answered,
-                    },
-                    on: {
-                      click: function () {
-                        return _vm.checkAnswer(1)
-                      },
-                    },
-                  },
-                  [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(
-                          _vm.questions[_vm.currentQuestion].answers[1].answer
-                        ) +
-                        "\n            "
-                    ),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "rounded-5 w-40p bg-white  text-black px-30 py-10 mt-30 text arial",
-                    class: [
-                      {
-                        right:
-                          _vm.questions[_vm.currentQuestion].answered &&
-                          _vm.questions[_vm.currentQuestion].answers[2].isRight,
-                      },
-                      {
-                        wrong:
-                          _vm.questions[_vm.currentQuestion].answered &&
-                          _vm.questions[_vm.currentQuestion].answerType == 2 &&
-                          !_vm.questions[_vm.currentQuestion].answers[2]
-                            .isRight,
-                      },
-                    ],
-                    attrs: {
-                      disabled: _vm.questions[_vm.currentQuestion].answered,
-                    },
-                    on: {
-                      click: function () {
-                        return _vm.checkAnswer(2)
-                      },
-                    },
-                  },
-                  [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(
-                          _vm.questions[_vm.currentQuestion].answers[2].answer
-                        ) +
-                        "\n            "
-                    ),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "rounded-5 w-40p bg-white text-black px-30 py-10 mt-30 text arial",
-                    class: [
-                      {
-                        right:
-                          _vm.questions[_vm.currentQuestion].answered &&
-                          _vm.questions[_vm.currentQuestion].answers[3].isRight,
-                      },
-                      {
-                        wrong:
-                          _vm.questions[_vm.currentQuestion].answered &&
-                          _vm.questions[_vm.currentQuestion].answerType == 3 &&
-                          !_vm.questions[_vm.currentQuestion].answers[3]
-                            .isRight,
-                      },
-                    ],
-                    attrs: {
-                      disabled: _vm.questions[_vm.currentQuestion].answered,
-                    },
-                    on: {
-                      click: function () {
-                        return _vm.checkAnswer(3)
-                      },
-                    },
-                  },
-                  [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(
-                          _vm.questions[_vm.currentQuestion].answers[3].answer
-                        ) +
-                        "\n            "
-                    ),
-                  ]
-                ),
-              ]
-            ),
-          ]
-        )
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.currentQuestion == _vm.firstMiniStep &&
-    !_vm.passFirstMini &&
-    _vm.currentQuestion != 10
-      ? _c(
-          "div",
-          { staticClass: " min-h-560  height-full relative overflow-hidden " },
-          [
-            _c(
-              "p",
-              { staticClass: "absolute heading-text for-motivi-animation" },
-              [_vm._v("Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ")]
-            ),
-            _vm._v(" "),
-            _c("img", {
-              staticClass:
-                "absolute top-30 mobile-bottom right-100 z-200 img-animation",
-              attrs: { src: "/images/first-mini.png", width: "400", alt: "" },
-            }),
-            _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.firstMiniAnswer,
-                  expression: "firstMiniAnswer",
-                },
-              ],
-              staticClass: "notes for-motivi-animation",
-              domProps: { value: _vm.firstMiniAnswer },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.firstMiniAnswer = $event.target.value
-                },
-              },
-            }),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "flex flex-mobile-col px-50 absolute MOBILE-B-60 bottom-60 w-60p items-center scale-up-ver-bottom",
-              },
-              [
-                _vm._m(0),
-                _vm._v(" "),
-                _c("div", { staticClass: "w-40p" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "rounded-5 start-game start-send w-full",
-                      attrs: { disabled: _vm.firstMiniAnswer == "" },
-                      on: { click: _vm.sendFirstEmail },
-                    },
-                    [_vm._v("Ողղարկել")]
-                  ),
-                ]),
-              ]
-            ),
-          ]
-        )
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.currentQuestion == _vm.secondMiniStep &&
-    !_vm.passSecondMini &&
-    _vm.currentQuestion != 10
-      ? _c("div", { staticClass: " min-h-560 relative px-15 md:px-50" }, [
-          _c(
-            "p",
-            {
-              staticClass:
-                " mt-50 text-white BraindAmanorRegular t-center text-24 md:text-48",
-            },
-            [_vm._v("Սթափության Թեստ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "p",
-            { staticClass: " mt-20 text-white max-w-500 text-custom t-center" },
-            [
-              _vm._v(
-                "Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա"
-              ),
-            ]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "mt-20 img-ilusion for-motivi-animation",
-            attrs: {
-              src: "/images/green.png",
-              alt: "",
-              width: "600",
-              height: "200",
-            },
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass:
-              "absolute top-30 right-100 z-200 ilusion-personage img-animation",
-            attrs: { src: "/images/second-mini.png", width: "300", alt: "" },
-          }),
-          _vm._v(" "),
+  return _c("div", [
+    _vm.secondPage
+      ? _c("div", { staticClass: "height-full" }, [
           _c(
             "div",
             {
               staticClass:
-                "flex flex-mobile-col-reverse  absolute bottom-60 w-70p items-end scale-up-ver-bottom",
+                "flex min-h-560 overflow-hidden relative height-full",
             },
             [
-              _c("div", { staticClass: "w-40p  pr-60" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.secondMiniAnswer,
-                      expression: "secondMiniAnswer",
-                    },
-                  ],
+              _c(
+                "div",
+                {
                   staticClass:
-                    "bg-transparent text-white outline-none focus:outline-none active:outline-none border-bottom-1 border-bottom-white bb-s py-5",
-                  attrs: { type: "text", placeholder: "Գրել պատասխանը" },
-                  domProps: { value: _vm.secondMiniAnswer },
-                  on: {
-                    input: function ($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.secondMiniAnswer = $event.target.value
-                    },
-                  },
-                }),
-              ]),
+                    "flex flex-col  justify-start pl-unset-for-mobile pl-50 ",
+                },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "w-ful mt-100 for-desktop" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "rounded-5 start-game start-page-2",
+                        on: { click: _vm.setThirdStep },
+                      },
+                      [_vm._v("Դե գնացինք")]
+                    ),
+                  ]),
+                ]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "w-40p" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "rounded-5 start-game start-send w-full",
-                    attrs: { disabled: _vm.secondMiniAnswer == "" },
-                    on: { click: _vm.sendSecondEmail },
-                  },
-                  [_vm._v("Ողղարկել")]
-                ),
-              ]),
+              _vm._m(1),
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "for-mobile-2" }, [
+            _c(
+              "button",
+              {
+                staticClass: "rounded-5 start-game start-page-2",
+                on: { click: _vm.setThirdStep },
+              },
+              [_vm._v("Դե գնացինք")]
+            ),
+          ]),
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.firstPage
+      ? _c("div", [
+          _c(
+            "div",
+            { staticClass: "flex start-flex min-h-560 overflow-hidden  full" },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex flex-col w-60p justify-center pl-50 w-full-800",
+                },
+                [
+                  _c("div", { staticClass: "text-72 guess mb-50" }, [
+                    _vm._v("Գուշակի՛ր կենացը"),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "description mb-50" }, [
+                    _vm._v("Անցիր թեստը ու պարզիր, թե ինչքան կենացագետ ես դու"),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "w-full" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "rounded-5 start-game start-page",
+                        on: { click: _vm.setSecondStep },
+                      },
+                      [_vm._v("Սկսել Խաղը")]
+                    ),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _vm._m(2),
             ]
           ),
         ])
       : _vm._e(),
     _vm._v(" "),
-    _vm.currentQuestion != 10 && _vm.questions[_vm.currentQuestion].answered
-      ? _c(
-          "div",
-          {
-            staticClass:
-              "absolute min-h-560 bottom-0 z-200 right-0 flex items-end mobile-motivy",
-          },
-          [
-            _c("img", {
-              staticClass: "img img-main ",
-              attrs: { src: "", width: "65%", id: "img", alt: "" },
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass:
-                "for-motivi-animation img absolute  top-50  -left-450 pl-30 motivi",
-              attrs: { src: "/images/motivi_1.png", width: "100%", alt: "" },
-            }),
-            _vm._v(" "),
-            _c(
-              "p",
-              {
-                staticClass:
-                  "for-motivi-animation-text absolute top-100 w-70p pl-30 motivi arial -left-410",
-              },
-              [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(
-                      _vm.isRight
-                        ? _vm.motiviQuotesRight[_vm.motiviQountForRightAnswer]
-                            .quote
-                        : _vm.motiviQuotesWrong[_vm.motiviQountForWrongAnswer]
-                            .quote
-                    )
-                ),
-              ]
-            ),
-          ]
-        )
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.currentQuestion == 10
-      ? _c(
-          "div",
-          {
-            staticClass:
-              "absolute min-h-560 bottom-0 z-300 flex flex-wrap top-0",
-          },
-          [
-            _vm._m(1),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex flex-wrap items-center w-full" }, [
-              _c(
+    _vm.gameStep
+      ? _c("div", { staticClass: " min-h-560 overflow-hidden relative " }, [
+          (_vm.currentQuestion != _vm.firstMiniStep || _vm.passFirstMini) &&
+          (_vm.currentQuestion != _vm.secondMiniStep || _vm.passSecondMini) &&
+          _vm.currentQuestion != 10
+            ? _c(
+                "div",
+                {
+                  class: [
+                    "relative  min-h-560 ",
+                    _vm.questions[_vm.currentQuestion].answered &&
+                    (_vm.currentQuestion == 1 ||
+                      _vm.currentQuestion == 5 ||
+                      _vm.currentQuestion == 8)
+                      ? "blure-custom"
+                      : "",
+                  ],
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "flex  w-full justify-between px-50 pt-30" },
+                    [
+                      _c("div", { staticClass: "answer" }, [
+                        _vm._v("Հարց "),
+                        _c("span", { staticClass: "text-textDefault" }, [
+                          _vm._v(_vm._s(_vm.currentQuestion + 1)),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "flex justify-end" },
+                        _vm._l(_vm.cupCount, function (n) {
+                          return _c("div", { staticClass: "mx-5" }, [
+                            _c("img", {
+                              attrs: {
+                                src: "/images/cup1.png",
+                                width: "20",
+                                alt: "",
+                              },
+                            }),
+                          ])
+                        }),
+                        0
+                      ),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "flex  w-full justify-between pt-mobile px-150-mobile font-size-48-mobile px-150 pt-50 text-center answer",
+                    },
+                    [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(_vm.questions[_vm.currentQuestion].question) +
+                          "\n            "
+                      ),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "flex flex-dir-for-buttons font-size-48-mobile  w-full justify-between px-150 px-150-mobile pt-50 text-center flex-wrap",
+                    },
+                    [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "rounded-5 w-40p bg-white text-black px-30 py-10 text arial",
+                          class: [
+                            {
+                              right:
+                                _vm.questions[_vm.currentQuestion].answered &&
+                                _vm.questions[_vm.currentQuestion].answers[0]
+                                  .isRight,
+                            },
+                            {
+                              wrong:
+                                _vm.questions[_vm.currentQuestion].answered &&
+                                _vm.questions[_vm.currentQuestion].answerType ==
+                                  0 &&
+                                !_vm.questions[_vm.currentQuestion].answers[0]
+                                  .isRight,
+                            },
+                          ],
+                          attrs: {
+                            disabled:
+                              _vm.questions[_vm.currentQuestion].answered,
+                          },
+                          on: {
+                            click: function () {
+                              return _vm.checkAnswer(0)
+                            },
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(
+                                _vm.questions[_vm.currentQuestion].answers[0]
+                                  .answer
+                              ) +
+                              "\n                "
+                          ),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "rounded-5 w-40p bg-white text-black px-30 py-10 text arial mt-30-mobile",
+                          class: [
+                            {
+                              right:
+                                _vm.questions[_vm.currentQuestion].answered &&
+                                _vm.questions[_vm.currentQuestion].answers[1]
+                                  .isRight,
+                            },
+                            {
+                              wrong:
+                                _vm.questions[_vm.currentQuestion].answered &&
+                                _vm.questions[_vm.currentQuestion].answerType ==
+                                  1 &&
+                                !_vm.questions[_vm.currentQuestion].answers[1]
+                                  .isRight,
+                            },
+                          ],
+                          attrs: {
+                            disabled:
+                              _vm.questions[_vm.currentQuestion].answered,
+                          },
+                          on: {
+                            click: function () {
+                              return _vm.checkAnswer(1)
+                            },
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(
+                                _vm.questions[_vm.currentQuestion].answers[1]
+                                  .answer
+                              ) +
+                              "\n                "
+                          ),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "rounded-5 w-40p bg-white  text-black px-30 py-10 mt-30 text arial",
+                          class: [
+                            {
+                              right:
+                                _vm.questions[_vm.currentQuestion].answered &&
+                                _vm.questions[_vm.currentQuestion].answers[2]
+                                  .isRight,
+                            },
+                            {
+                              wrong:
+                                _vm.questions[_vm.currentQuestion].answered &&
+                                _vm.questions[_vm.currentQuestion].answerType ==
+                                  2 &&
+                                !_vm.questions[_vm.currentQuestion].answers[2]
+                                  .isRight,
+                            },
+                          ],
+                          attrs: {
+                            disabled:
+                              _vm.questions[_vm.currentQuestion].answered,
+                          },
+                          on: {
+                            click: function () {
+                              return _vm.checkAnswer(2)
+                            },
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(
+                                _vm.questions[_vm.currentQuestion].answers[2]
+                                  .answer
+                              ) +
+                              "\n                "
+                          ),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "rounded-5 w-40p bg-white text-black px-30 py-10 mt-30 text arial",
+                          class: [
+                            {
+                              right:
+                                _vm.questions[_vm.currentQuestion].answered &&
+                                _vm.questions[_vm.currentQuestion].answers[3]
+                                  .isRight,
+                            },
+                            {
+                              wrong:
+                                _vm.questions[_vm.currentQuestion].answered &&
+                                _vm.questions[_vm.currentQuestion].answerType ==
+                                  3 &&
+                                !_vm.questions[_vm.currentQuestion].answers[3]
+                                  .isRight,
+                            },
+                          ],
+                          attrs: {
+                            disabled:
+                              _vm.questions[_vm.currentQuestion].answered,
+                          },
+                          on: {
+                            click: function () {
+                              return _vm.checkAnswer(3)
+                            },
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(
+                                _vm.questions[_vm.currentQuestion].answers[3]
+                                  .answer
+                              ) +
+                              "\n                "
+                          ),
+                        ]
+                      ),
+                    ]
+                  ),
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.currentQuestion == _vm.firstMiniStep &&
+          !_vm.passFirstMini &&
+          _vm.currentQuestion != 10
+            ? _c(
                 "div",
                 {
                   staticClass:
-                    "w-full md:w-half-auto pl-15 md:pl-50 for-motivi-animation",
+                    " min-h-560  height-full relative overflow-hidden ",
                 },
                 [
                   _c(
                     "p",
                     {
-                      staticClass:
-                        "BraindAmanorRegular text-white text-120 leading-none text-center md:text-left",
+                      staticClass: "absolute heading-text for-motivi-animation",
                     },
-                    [_vm._v("10/" + _vm._s(_vm.rightAnswersCount))]
+                    [_vm._v("Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ")]
                   ),
                   _vm._v(" "),
-                  _vm._l(_vm.prize, function (item) {
-                    return _vm.rightAnswersCount <= item.max &&
-                      _vm.rightAnswersCount >= item.min
-                      ? _c(
-                          "p",
-                          {
-                            key: item.title,
-                            staticClass:
-                              "BraindAmanorRegular text-white text-36  text-center md:text-left",
-                          },
-                          [
-                            _vm._v(
-                              "\n                    " +
-                                _vm._s(item.title) +
-                                "\n                "
-                            ),
-                          ]
-                        )
-                      : _vm._e()
+                  _c("img", {
+                    staticClass:
+                      "absolute top-30 mobile-bottom right-100 z-200 img-animation",
+                    attrs: {
+                      src: "/images/first-mini.png",
+                      width: "400",
+                      alt: "",
+                    },
                   }),
                   _vm._v(" "),
-                  _vm._m(2),
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c(
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.firstMiniAnswer,
+                        expression: "firstMiniAnswer",
+                      },
+                    ],
+                    staticClass: "notes for-motivi-animation",
+                    domProps: { value: _vm.firstMiniAnswer },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.firstMiniAnswer = $event.target.value
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "flex flex-mobile-col px-50 absolute MOBILE-B-60 bottom-60 w-60p items-center scale-up-ver-bottom",
+                    },
+                    [
+                      _vm._m(3),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "w-40p" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "rounded-5 start-game start-send w-full",
+                            attrs: { disabled: _vm.firstMiniAnswer == "" },
+                            on: { click: _vm.sendFirstEmail },
+                          },
+                          [_vm._v("Ողղարկել")]
+                        ),
+                      ]),
+                    ]
+                  ),
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.currentQuestion == _vm.secondMiniStep &&
+          !_vm.passSecondMini &&
+          _vm.currentQuestion != 10
+            ? _c("div", { staticClass: " min-h-560 relative px-15 md:px-50" }, [
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      " mt-50 text-white BraindAmanorRegular t-center text-24 md:text-48",
+                  },
+                  [_vm._v("Սթափության Թեստ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      " mt-20 text-white max-w-500 text-custom t-center",
+                  },
+                  [
+                    _vm._v(
+                      "Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա"
+                    ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "mt-20 img-ilusion for-motivi-animation",
+                  attrs: {
+                    src: "/images/green.png",
+                    alt: "",
+                    width: "600",
+                    height: "200",
+                  },
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass:
+                    "absolute top-30 right-100 z-200 ilusion-personage img-animation",
+                  attrs: {
+                    src: "/images/second-mini.png",
+                    width: "300",
+                    alt: "",
+                  },
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "flex flex-mobile-col-reverse  absolute bottom-60 w-70p items-end scale-up-ver-bottom",
+                  },
+                  [
+                    _c("div", { staticClass: "w-40p  pr-60" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.secondMiniAnswer,
+                            expression: "secondMiniAnswer",
+                          },
+                        ],
+                        staticClass:
+                          "bg-transparent text-white outline-none focus:outline-none active:outline-none border-bottom-1 border-bottom-white bb-s py-5",
+                        attrs: { type: "text", placeholder: "Գրել պատասխանը" },
+                        domProps: { value: _vm.secondMiniAnswer },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.secondMiniAnswer = $event.target.value
+                          },
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "w-40p" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "rounded-5 start-game start-send w-full",
+                          attrs: { disabled: _vm.secondMiniAnswer == "" },
+                          on: { click: _vm.sendSecondEmail },
+                        },
+                        [_vm._v("Ողղարկել")]
+                      ),
+                    ]),
+                  ]
+                ),
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.currentQuestion != 10 &&
+          _vm.questions[_vm.currentQuestion].answered &&
+          (_vm.currentQuestion == 1 ||
+            _vm.currentQuestion == 5 ||
+            _vm.currentQuestion == 8)
+            ? _c(
                 "div",
-                { staticClass: "w-full md:w-half-auto px-15 md:px-50" },
+                {
+                  staticClass:
+                    "absolute min-h-560 bottom-0 z-200 right-0 flex items-end mobile-motivy",
+                },
                 [
                   _c("img", {
-                    staticClass: "img-animation",
-                    attrs: { src: "", alt: "" },
+                    staticClass: "img img-main ",
+                    attrs: { src: "", width: "65%", id: "img", alt: "" },
                   }),
                   _vm._v(" "),
-                  _vm._l(_vm.prize, function (item) {
-                    return _vm.rightAnswersCount <= item.max &&
-                      _vm.rightAnswersCount >= item.min
-                      ? _c(
-                          "p",
-                          { key: item.title, staticClass: "text-white" },
-                          [
-                            _vm._v(
-                              "\n                    " +
-                                _vm._s(item.desc) +
-                                "\n                "
-                            ),
-                          ]
-                        )
-                      : _vm._e()
+                  _c("img", {
+                    staticClass:
+                      "for-motivi-animation img absolute  top-50  -left-450 pl-30 motivi",
+                    attrs: {
+                      src: "/images/motivi_1.png",
+                      width: "100%",
+                      alt: "",
+                    },
                   }),
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _vm._m(3),
-            ]),
-          ]
-        )
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "for-motivi-animation-text BraindAmanorRegular absolute top-100 w-70p pl-30 motivi arial -left-410",
+                    },
+                    [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(
+                            _vm.isRight
+                              ? _vm.motiviQuotesRight[
+                                  _vm.motiviQountForRightAnswer
+                                ].quote
+                              : _vm.motiviQuotesWrong[
+                                  _vm.motiviQountForWrongAnswer
+                                ].quote
+                          )
+                      ),
+                    ]
+                  ),
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.currentQuestion == 10
+            ? _c(
+                "div",
+                { staticClass: "absolute min-h-560 bottom-0 z-300   top-0" },
+                [
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "flex flex-wrap items-center w-full" },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full md:w-half-auto pl-15 md:pl-50 for-motivi-animation",
+                        },
+                        [
+                          _c(
+                            "p",
+                            {
+                              staticClass:
+                                "BraindAmanorRegular text-white text-120 leading-none text-center md:text-left",
+                            },
+                            [_vm._v("10/" + _vm._s(_vm.rightAnswersCount))]
+                          ),
+                          _vm._v(" "),
+                          _vm._l(_vm.prize, function (item) {
+                            return _vm.rightAnswersCount <= item.max &&
+                              _vm.rightAnswersCount >= item.min
+                              ? _c(
+                                  "p",
+                                  {
+                                    key: item.title,
+                                    staticClass:
+                                      "BraindAmanorRegular text-white text-36  text-center md:text-left",
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                        " +
+                                        _vm._s(item.title) +
+                                        "\n                    "
+                                    ),
+                                  ]
+                                )
+                              : _vm._e()
+                          }),
+                          _vm._v(" "),
+                          _vm._m(5),
+                        ],
+                        2
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-half-auto px-15 md:px-50" },
+                        [
+                          _c("img", {
+                            staticClass: "img-animation",
+                            attrs: { src: "/images/example.jpg", alt: "" },
+                          }),
+                          _vm._v(" "),
+                          _vm._l(_vm.prize, function (item) {
+                            return _vm.rightAnswersCount <= item.max &&
+                              _vm.rightAnswersCount >= item.min
+                              ? _c(
+                                  "p",
+                                  {
+                                    key: item.title,
+                                    staticClass:
+                                      "text-white mt-20 img-animation",
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                        " +
+                                        _vm._s(item.desc) +
+                                        "\n                    "
+                                    ),
+                                  ]
+                                )
+                              : _vm._e()
+                          }),
+                        ],
+                        2
+                      ),
+                      _vm._v(" "),
+                      _vm._m(6),
+                    ]
+                  ),
+                ]
+              )
+            : _vm._e(),
+        ])
       : _vm._e(),
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "relative for-animation" }, [
+      _c("img", {
+        staticClass: "mt-50 width-for-text",
+        attrs: { src: "/images/shape.png", alt: "personage", width: "600" },
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "absolute top-100 left-0 py-20 px-30 start-text" },
+        [
+          _vm._v(
+            "\n                        Մեզ արդեն հասել են քո կենացների մասին պատմությունները: Ասում են՝ շրջապատումդ քեզնից ուժեղ թամադա չկա: Եկել ենք ստուգելու՝ իրո՞ք այդքան լավ գիտես հայկական կենացները:"
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                        Անցի՛ր թեստը, տեսնենք՝ քանի՞ ճիշտ պատասխան կտաս։\n                        "
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                        Պատրա՞ստ ես։ Սկսեցինք։\n                    "
+          ),
+        ]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          " flex items-end mt-50 img-right  justify-end absolute bottom-0 right-50 h-full-mobile img-animation",
+      },
+      [
+        _c("img", {
+          staticClass: "mt-100 personage-game for-desktop",
+          attrs: {
+            src: "/images/personage.png",
+            alt: "personage",
+            width: "600",
+          },
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "personage-game   for-mobile per-get-start",
+          attrs: {
+            src: "/images/personage-mobile.png",
+            alt: "personage",
+            width: "300",
+          },
+        }),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "w-40p flex items-start mt-50  justify-end game " },
+      [
+        _c("img", {
+          staticClass: "mt-100 cupple_1",
+          attrs: { src: "/images/cupple2.png", alt: "cupple_1", width: "220" },
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "cupple_2",
+          attrs: { src: "/images/cupple1.png", alt: "cupple_1", width: "220" },
+        }),
+      ]
+    )
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -54624,10 +54904,10 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 var routes = [{
   path: "/",
-  component: _components_views_StartGame__WEBPACK_IMPORTED_MODULE_2__["default"]
+  component: _components_views_Game__WEBPACK_IMPORTED_MODULE_4__["default"]
 }, {
   path: "/start-game",
-  component: _components_views_Index__WEBPACK_IMPORTED_MODULE_3__["default"]
+  component: _components_views_Game__WEBPACK_IMPORTED_MODULE_4__["default"]
 }, {
   path: "/game",
   component: _components_views_Game__WEBPACK_IMPORTED_MODULE_4__["default"]

@@ -8,11 +8,11 @@ Vue.use(vueRouter);
 const routes = [
     {
         path: "/",
-        component: StartGame
+        component: Game
     },
     {
         path:"/start-game",
-        component:Index
+        component:Game
     },
     {
         path:"/game",
