@@ -218,7 +218,7 @@ export default {
                     answerType: ""
                 },
             ],
-            currentQuestion:3,
+            currentQuestion:0,
             cupCount: 2,
             motiviQuotesRight: [
                 {quote: "Փաստորեն՝ լավ ես տիրապետում հայկական կենացներին։ Զարմացնում ես։"},
