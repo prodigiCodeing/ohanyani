@@ -2220,7 +2220,7 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
         answered: false,
         answerType: ""
       }],
-      currentQuestion: 0,
+      currentQuestion: 3,
       cupCount: 2,
       motiviQuotesRight: [{
         quote: "Փաստորեն՝ լավ ես տիրապետում հայկական կենացներին։ Զարմացնում ես։"

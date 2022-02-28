@@ -28,7 +28,6 @@ class HomeController extends Controller
         return view('home');
     }
     public function sendQuote(Request $request){
-
         Mail::raw($request->message, function ($message) {
             $message->from('info.ohanyan@gmail.com', 'Ohanyan Team');
             $message->to('smariamvs@gmail.com');
