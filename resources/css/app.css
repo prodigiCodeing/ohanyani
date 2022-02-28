@@ -201,24 +201,28 @@
     animation-delay: 0.7s;
 }
 @keyframes cupple_1 {
-    0%{transform: rotate(-45deg);}
+    0%{transform: rotate(0deg);}
+    /*10%{transform: rotate(-45deg);}*/
     60%{transform: rotate(-10deg);}
     /*62%{transform: rotate(20deg);}*/
     100%{transform: rotate(0deg);}
 }
 @-webkit-keyframes cupple_1 {
-    0%{transform: rotate(-45deg);}
+    0%{transform: rotate(0deg);}
+    /*10%{transform: rotate(-45deg);}*/
     60%{transform: rotate(-10deg);}
     /*62%{transform: rotate(20deg);}*/
     100%{transform: rotate(0deg);}
 }
 @-webkit-keyframes cupple_2 {
-    0%{    transform: rotate(30deg);}
+    0%{    transform: rotate(0deg);}
+    /*10%{    transform: rotate(30deg);}*/
     50%{  transform: rotate(-31deg);}
     100%{    transform: rotate(0);}
 }
 @keyframes cupple_2 {
-    0%{    transform: rotate(30deg);}
+    0%{    transform: rotate(0deg);}
+    /*10%{    transform: rotate(30deg);}*/
     50%{       transform: rotate(-31deg);}
     100%{    transform: rotate(0);}
 }
