@@ -34,10 +34,10 @@
             </div>
         </div>
         <div v-if="currentQuestion == firstMiniStep && !passFirstMini  && currentQuestion  != 10" class=" min-h-560  height-full relative overflow-hidden ">
-            <p class="absolute heading-text">Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ</p>
-            <img class="absolute top-30 mobile-bottom right-100 z-200 " src="/images/first-mini.png" width="400" alt="">
-            <textarea class="notes" v-model="firstMiniAnswer"></textarea>
-            <div class="flex flex-mobile-col px-50 absolute MOBILE-B-60 bottom-60 w-60p items-center">
+            <p class="absolute heading-text for-motivi-animation">Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ</p>
+            <img class="absolute top-30 mobile-bottom right-100 z-200 img-animation" src="/images/first-mini.png" width="400" alt="">
+            <textarea class="notes for-motivi-animation" v-model="firstMiniAnswer"></textarea>
+            <div class="flex flex-mobile-col px-50 absolute MOBILE-B-60 bottom-60 w-60p items-center scale-up-ver-bottom">
                 <div class="w-60p  pr-60">
                     <p class="desc pr-20 ">Ամենալավ կենաց ասողը, կստանա  նվեր Ohanyan Brandy-ի կողմից</p>
                 </div>
@@ -49,9 +49,9 @@
         <div v-if="currentQuestion == secondMiniStep && !passSecondMini && currentQuestion  != 10 " class=" min-h-560 relative px-15 md:px-50">
             <p class=" mt-50 text-white BraindAmanorRegular t-center text-24 md:text-48">Սթափության Թեստ</p>
             <p class=" mt-20 text-white max-w-500 text-custom t-center">Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա</p>
-            <img src="/images/green.png" alt="" class="mt-20 img-ilusion" width="600" height="200">
-            <img class="absolute top-30 right-100 z-200 ilusion-personage" src="/images/second-mini.png" width="300" alt="">
-             <div class="flex flex-mobile-col-reverse  absolute bottom-60 w-70p items-end">
+            <img src="/images/green.png" alt="" class="mt-20 img-ilusion for-motivi-animation" width="600" height="200">
+            <img class="absolute top-30 right-100 z-200 ilusion-personage img-animation" src="/images/second-mini.png" width="300" alt="">
+             <div class="flex flex-mobile-col-reverse  absolute bottom-60 w-70p items-end scale-up-ver-bottom">
                  <div class="w-40p  pr-60">
                      <input type="text" class="bg-transparent text-white outline-none focus:outline-none active:outline-none border-bottom-1 border-bottom-white bb-s py-5" placeholder="Գրել պատասխանը" v-model="secondMiniAnswer">
                  </div>
@@ -62,11 +62,11 @@
         </div>
         <div class="absolute min-h-560 bottom-0 z-200 right-0 flex items-end mobile-motivy"
              v-if="currentQuestion !=10  && questions[currentQuestion].answered ">
-            <img src="/images/motivi_1.png" width="100%" class="img absolute  top-50  -left-450 pl-30 motivi" alt="">
             <img  src="" width="65%" class="img img-main " id="img" alt="">
-<!--            <img src="/images/Bubble.png" width="95%" class="for-mobile" alt="">-->
-            <p class="absolute top-100 w-70p pl-30 motivi arial -left-410">
-                {{ isRight ? motiviQuotesRight[motiviQountForRightAnswer].quote : motiviQuotesWrong[motiviQountForWrongAnswer].quote }}</p>
+                 <img src="/images/motivi_1.png" width="100%" class="for-motivi-animation img absolute  top-50  -left-450 pl-30 motivi" alt="">
+                <p class="for-motivi-animation-text absolute top-100 w-70p pl-30 motivi arial -left-410">
+                    {{ isRight ? motiviQuotesRight[motiviQountForRightAnswer].quote : motiviQuotesWrong[motiviQountForWrongAnswer].quote }}</p>
+
         </div>
         <div class="absolute min-h-560 bottom-0 z-300 flex flex-wrap top-0"
              v-if="currentQuestion  == 10">
@@ -74,7 +74,7 @@
                 <img src="/images/logo.png" alt="" width="150px" class="pl-15 md:pl-50">
             </div>
             <div class="flex flex-wrap items-center w-full">
-                <div class="w-full md:w-half-auto pl-15 md:pl-50">
+                <div class="w-full md:w-half-auto pl-15 md:pl-50 for-motivi-animation">
                     <p class="BraindAmanorRegular text-white text-120 leading-none text-center md:text-left">10/{{rightAnswersCount}}</p>
                     <p class="BraindAmanorRegular text-white text-36  text-center md:text-left"  v-for="item in prize" :key="item.title" v-if="rightAnswersCount <= item.max && rightAnswersCount >=  item.min">
                         {{item.title}}
@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="w-full md:w-half-auto px-15 md:px-50">
-                    <img src="" alt="">
+                    <img src="" alt="" class="img-animation">
                     <p class="text-white" v-for="item in prize" :key="item.title" v-if="rightAnswersCount <= item.max && rightAnswersCount >=  item.min">
                         {{item.desc}}
                     </p>
