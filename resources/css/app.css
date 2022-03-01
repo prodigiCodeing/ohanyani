@@ -55,7 +55,7 @@
 }
 .start-game {
     font-family: "BraindAmanorRegular";
-    font-size: 20px;
+    font-size: 26px;
     border-radius: 7px;
     background-image: -moz-linear-gradient( 90deg, rgb(222,180,60) 0%, rgb(248,223,104) 100%);
     background-image: -webkit-linear-gradient( 90deg, rgb(222,180,60) 0%, rgb(248,223,104) 100%);
@@ -199,6 +199,16 @@
     -webkit-animation:cupple_2 1.6s both  ;
     animation: cupple_2 1.6s both ;
     animation-delay: 0.7s;
+}
+.cupple_2:hover{
+    transform:scale(1.1)!important;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.cupple_1:hover{
+    transform:scale(1.1)!important;
+    cursor: pointer;
+    transition: all 0.5s
 }
 @keyframes cupple_1 {
     0%{transform: rotate(0deg);}

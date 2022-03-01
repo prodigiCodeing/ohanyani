@@ -276,10 +276,10 @@ export default {
             motiviQountForRightAnswer: 0,
             motiviQountForWrongAnswer: 0,
             passFirstMini: false,
-            firstMiniStep: 3,
+            firstMiniStep: 4,
             firstMiniAnswer: "",
             passSecondMini: false,
-            secondMiniStep: 8,
+            secondMiniStep: 9,
             secondMiniAnswer: "",
             rightAnswersCount: 0,
             isRight: false,
@@ -314,6 +314,7 @@ export default {
             gameStep:false,
         }
     },
+
 
     methods: {
         setSecondStep(){
