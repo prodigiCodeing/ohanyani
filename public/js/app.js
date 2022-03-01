@@ -38718,7 +38718,7 @@ var render = function () {
                               staticClass:
                                 "BraindAmanorRegular text-white text-120 leading-none text-center",
                             },
-                            [_vm._v("10/" + _vm._s(_vm.rightAnswersCount))]
+                            [_vm._v(_vm._s(_vm.rightAnswersCount) + "/10")]
                           ),
                           _vm._v(" "),
                           _vm._l(_vm.prize, function (item) {

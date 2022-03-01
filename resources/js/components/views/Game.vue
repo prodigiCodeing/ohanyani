@@ -118,7 +118,7 @@
                 </div>
                 <div class="flex flex-wrap items-center w-full">
                     <div class="w-full md:w-half-auto pl-15 md:pl-50 for-motivi-animation">
-                        <p class="BraindAmanorRegular text-white text-120 leading-none text-center">10/{{rightAnswersCount}}</p>
+                        <p class="BraindAmanorRegular text-white text-120 leading-none text-center">{{rightAnswersCount}}/10</p>
                         <p class="BraindAmanorRegular text-white text-36  text-center"  v-for="item in prize" :key="item.title" v-if="rightAnswersCount <= item.max && rightAnswersCount >=  item.min">
                             {{item.title}}
                         </p>
