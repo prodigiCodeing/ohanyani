@@ -40,38 +40,40 @@
                 </div>
             </div>
         </div>
-        <div v-if="gameStep" class=" min-h-560 overflow-hidden relative ">
-            <div :class="['relative  min-h-560 ', (questions[currentQuestion].answered  && ( currentQuestion == 1 || currentQuestion == 5  || currentQuestion == 8 ))  ? 'blure-custom' : '' ]" v-if="(currentQuestion != firstMiniStep || passFirstMini) && (currentQuestion != secondMiniStep || passSecondMini ) && currentQuestion != 10">
+        <div v-if="gameStep" class=" min-h-560 overflow-hidden relative  ">
+            <div :class="['relative  min-h-560 flex flex-col justify-between', (questions[currentQuestion].answered  && ( currentQuestion == 1 || currentQuestion == 5  || currentQuestion == 8 ))  ? 'blure-custom' : '' ]" v-if="(currentQuestion != firstMiniStep || passFirstMini) && (currentQuestion != secondMiniStep || passSecondMini ) && currentQuestion != 10">
                 <div class="flex  w-full justify-between px-50 pt-30">
                     <div class="answer">Հարց <span class="text-textDefault">{{ currentQuestion + 1 }}</span></div>
                     <div class="flex justify-end">
                         <div v-for="n in cupCount" class="mx-5"><img src="/images/cup1.png" width="20" alt=""></div>
                     </div>
                 </div>
-                <div class="flex  w-full justify-between pt-mobile px-150-mobile font-size-48-mobile px-150 pt-50 text-center answer">
-                    {{ questions[currentQuestion].question }}
-                </div>
-                <div class="flex flex-dir-for-buttons font-size-48-mobile  w-full justify-between px-150 px-150-mobile pt-50 text-center flex-wrap">
-                    <button class="rounded-5 w-40p bg-white text-black px-30 py-10 text arial"
-                            v-bind:class="[{ right: questions[currentQuestion].answered &&  questions[currentQuestion].answers[0].isRight }, {wrong:questions[currentQuestion].answered && questions[currentQuestion].answerType == 0 && !questions[currentQuestion].answers[0].isRight }]"
-                            v-on:click="()=>checkAnswer(0)" :disabled="questions[currentQuestion].answered">
-                        {{ questions[currentQuestion].answers[0].answer }}
-                    </button>
-                    <button class="rounded-5 w-40p bg-white text-black px-30 py-10 text arial mt-30-mobile"
-                            v-bind:class="[{ right: questions[currentQuestion].answered &&  questions[currentQuestion].answers[1].isRight }, {wrong:questions[currentQuestion].answered && questions[currentQuestion].answerType == 1 && !questions[currentQuestion].answers[1].isRight }]"
-                            v-on:click="()=>checkAnswer(1)" :disabled="questions[currentQuestion].answered">
-                        {{ questions[currentQuestion].answers[1].answer }}
-                    </button>
-                    <button class="rounded-5 w-40p bg-white  text-black px-30 py-10 mt-30 text arial"
-                            v-bind:class="[{ right: questions[currentQuestion].answered &&  questions[currentQuestion].answers[2].isRight }, {wrong:questions[currentQuestion].answered && questions[currentQuestion].answerType == 2 && !questions[currentQuestion].answers[2].isRight }]"
-                            v-on:click="()=>checkAnswer(2)" :disabled="questions[currentQuestion].answered">
-                        {{ questions[currentQuestion].answers[2].answer }}
-                    </button>
-                    <button class="rounded-5 w-40p bg-white text-black px-30 py-10 mt-30 text arial"
-                            v-bind:class="[{ right: questions[currentQuestion].answered &&  questions[currentQuestion].answers[3].isRight }, {wrong:questions[currentQuestion].answered && questions[currentQuestion].answerType == 3 && !questions[currentQuestion].answers[3].isRight }]"
-                            v-on:click="()=>checkAnswer(3)" :disabled="questions[currentQuestion].answered">
-                        {{ questions[currentQuestion].answers[3].answer }}
-                    </button>
+                <div>
+                    <div class="flex  w-full justify-center pt-mobile py-50 px-150-mobile font-size-48-mobile px-150 pt-50 text-center answer">
+                        {{ questions[currentQuestion].question }}
+                    </div>
+                    <div class="flex flex-dir-for-buttons font-size-48-mobile  w-full justify-between pb-50 px-50 px-150-mobile pt-50 text-center flex-wrap">
+                        <button class="rounded-5 w-half-auto bg-white text-black px-30 py-10 text arial"
+                                v-bind:class="[{ right: questions[currentQuestion].answered &&  questions[currentQuestion].answers[0].isRight }, {wrong:questions[currentQuestion].answered && questions[currentQuestion].answerType == 0 && !questions[currentQuestion].answers[0].isRight }]"
+                                v-on:click="()=>checkAnswer(0)" :disabled="questions[currentQuestion].answered">
+                            {{ questions[currentQuestion].answers[0].answer }}
+                        </button>
+                        <button class="rounded-5 w-half-auto bg-white text-black px-30 py-10 text arial mt-30-mobile"
+                                v-bind:class="[{ right: questions[currentQuestion].answered &&  questions[currentQuestion].answers[1].isRight }, {wrong:questions[currentQuestion].answered && questions[currentQuestion].answerType == 1 && !questions[currentQuestion].answers[1].isRight }]"
+                                v-on:click="()=>checkAnswer(1)" :disabled="questions[currentQuestion].answered">
+                            {{ questions[currentQuestion].answers[1].answer }}
+                        </button>
+                        <button class="rounded-5 w-half-auto bg-white  text-black px-30 py-10 mt-30 text arial"
+                                v-bind:class="[{ right: questions[currentQuestion].answered &&  questions[currentQuestion].answers[2].isRight }, {wrong:questions[currentQuestion].answered && questions[currentQuestion].answerType == 2 && !questions[currentQuestion].answers[2].isRight }]"
+                                v-on:click="()=>checkAnswer(2)" :disabled="questions[currentQuestion].answered">
+                            {{ questions[currentQuestion].answers[2].answer }}
+                        </button>
+                        <button class="rounded-5 w-half-auto bg-white text-black px-30 py-10 mt-30 text arial"
+                                v-bind:class="[{ right: questions[currentQuestion].answered &&  questions[currentQuestion].answers[3].isRight }, {wrong:questions[currentQuestion].answered && questions[currentQuestion].answerType == 3 && !questions[currentQuestion].answers[3].isRight }]"
+                                v-on:click="()=>checkAnswer(3)" :disabled="questions[currentQuestion].answered">
+                            {{ questions[currentQuestion].answers[3].answer }}
+                        </button>
+                    </div>
                 </div>
             </div>
             <div v-if="currentQuestion == firstMiniStep && !passFirstMini  && currentQuestion  != 10" class=" min-h-560  height-full relative overflow-hidden ">
@@ -116,8 +118,8 @@
                 </div>
                 <div class="flex flex-wrap items-center w-full">
                     <div class="w-full md:w-half-auto pl-15 md:pl-50 for-motivi-animation">
-                        <p class="BraindAmanorRegular text-white text-120 leading-none text-center md:text-left">10/{{rightAnswersCount}}</p>
-                        <p class="BraindAmanorRegular text-white text-36  text-center md:text-left"  v-for="item in prize" :key="item.title" v-if="rightAnswersCount <= item.max && rightAnswersCount >=  item.min">
+                        <p class="BraindAmanorRegular text-white text-120 leading-none text-center">10/{{rightAnswersCount}}</p>
+                        <p class="BraindAmanorRegular text-white text-36  text-center"  v-for="item in prize" :key="item.title" v-if="rightAnswersCount <= item.max && rightAnswersCount >=  item.min">
                             {{item.title}}
                         </p>
                         <div class="w-full text-center mt-50 for-desktop">
