@@ -38037,7 +38037,7 @@ var render = function () {
             "div",
             {
               staticClass:
-                "flex min-h-560 overflow-hidden relative height-full",
+                "flex min-h-910  md:min-h-560 overflow-hidden relative height-full",
             },
             [
               _c(
@@ -38083,7 +38083,10 @@ var render = function () {
       ? _c("div", [
           _c(
             "div",
-            { staticClass: "flex start-flex min-h-560 overflow-hidden  full" },
+            {
+              staticClass:
+                "flex start-flex min-h-910  md:min-h-560 overflow-hidden  full",
+            },
             [
               _c(
                 "div",
@@ -38124,7 +38127,7 @@ var render = function () {
           "div",
           {
             staticClass:
-              " min-h-560 overflow-hidden relative  height-mobile-100",
+              " min-h-910  md:min-h-560 overflow-hidden relative  height-mobile-100",
           },
           [
             (_vm.currentQuestion != _vm.firstMiniStep || _vm.passFirstMini) &&
@@ -38134,7 +38137,7 @@ var render = function () {
                   "div",
                   {
                     class: [
-                      "relative  min-h-560 flex flex-col justify-between",
+                      "relative  min-h-910  md:min-h-560 flex flex-col justify-between",
                       _vm.questions[_vm.currentQuestion].answered &&
                       (_vm.currentQuestion == 1 ||
                         _vm.currentQuestion == 5 ||
@@ -38397,7 +38400,7 @@ var render = function () {
                   "div",
                   {
                     staticClass:
-                      " min-h-560  height-full height-mobile-100 relative overflow-hidden ",
+                      " min-h-910  md:min-h-560  height-full height-mobile-100 relative overflow-hidden ",
                   },
                   [
                     _c(
@@ -38478,7 +38481,7 @@ var render = function () {
                   "div",
                   {
                     staticClass:
-                      " min-h-560 relative pt-30 md:pt-0 px-15 md:px-50  min-h-560 overflow-hidden relative  height-mobile-100",
+                      " min-h-910  md:min-h-560 relative pt-30 md:pt-0 px-15 md:px-50  min-h-910  md:min-h-560 overflow-hidden relative  height-mobile-100",
                   },
                   [
                     _c(
@@ -38596,7 +38599,7 @@ var render = function () {
                   "div",
                   {
                     staticClass:
-                      "absolute min-h-560 bottom-0 z-200 right-0 flex items-end mobile-motivy",
+                      "absolute min-h-910  md:min-h-560 bottom-0 z-200 right-0 flex items-end mobile-motivy",
                   },
                   [
                     _c("img", {
@@ -38642,7 +38645,10 @@ var render = function () {
             _vm.currentQuestion == 10
               ? _c(
                   "div",
-                  { staticClass: "absolute min-h-560 bottom-0 z-300   top-0" },
+                  {
+                    staticClass:
+                      "absolute min-h-700  md:min-h-560 bottom-0 z-300   top-0",
+                  },
                   [
                     _vm._m(4),
                     _vm._v(" "),
