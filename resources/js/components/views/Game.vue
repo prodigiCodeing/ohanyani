@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="secondPage" class="height-full">
-            <div class="flex min-h-910  md:min-h-560 overflow-hidden relative height-full">
+            <div class="flex min-h-560 overflow-hidden relative height-full">
                 <div class="flex flex-col  justify-start pl-unset-for-mobile pl-50 ">
                     <div class="relative for-animation">
                         <img class="mt-50 width-for-text" src="/images/shape.png" alt="personage" width="600">
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div v-if="firstPage">
-            <div class="flex start-flex min-h-910  md:min-h-560 overflow-hidden  full">
+            <div class="flex start-flex min-h-560 overflow-hidden  full">
                 <div class="flex flex-col w-60p justify-center pl-50 w-full-800">
                     <div class="text-72 guess mb-50">Գուշակի՛ր կենացը</div>
                     <div class="description mb-50">Անցիր թեստը ու պարզիր, թե ինչքան կենացագետ ես դու</div>
@@ -40,8 +40,8 @@
                 </div>
             </div>
         </div>
-        <div v-if="gameStep" class=" min-h-910  md:min-h-560 overflow-hidden relative  height-mobile-100">
-            <div :class="['relative  min-h-910  md:min-h-560 flex flex-col justify-between', (questions[currentQuestion].answered  && ( currentQuestion == 1 || currentQuestion == 5  || currentQuestion == 8 ))  ? 'blure-custom' : '' ]" v-if="(currentQuestion != firstMiniStep || passFirstMini) && (currentQuestion != secondMiniStep || passSecondMini ) && currentQuestion != 10">
+        <div v-if="gameStep" class=" min-h-560 overflow-hidden relative  height-mobile-100">
+            <div :class="['relative  min-h-560 flex flex-col justify-between', (questions[currentQuestion].answered  && ( currentQuestion == 1 || currentQuestion == 5  || currentQuestion == 8 ))  ? 'blure-custom' : '' ]" v-if="(currentQuestion != firstMiniStep || passFirstMini) && (currentQuestion != secondMiniStep || passSecondMini ) && currentQuestion != 10">
                 <div class="flex  w-full justify-between px-50 pt-30">
                     <div class="answer">Հարց <span class="text-textDefault">{{ currentQuestion + 1 }}</span></div>
                     <div class="flex justify-end flex-wrap flex-cup-image">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
             </div>
-            <div v-if="currentQuestion == firstMiniStep && !passFirstMini  && currentQuestion  != 10" class=" min-h-910  md:min-h-560  height-full height-mobile-100 relative overflow-hidden ">
+            <div v-if="currentQuestion == firstMiniStep && !passFirstMini  && currentQuestion  != 10" class=" min-h-560  height-full height-mobile-100 relative overflow-hidden ">
                 <p class="absolute heading-text for-motivi-animation">Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ</p>
                 <img class="absolute top-30 mobile-bottom right-100 z-200 img-animation" src="/images/first-mini.png" width="400" alt="">
                 <textarea class="notes for-motivi-animation" v-model="firstMiniAnswer"></textarea>
@@ -89,7 +89,7 @@
                     </div>
                 </div>
             </div>
-            <div v-if="currentQuestion == secondMiniStep && !passSecondMini && currentQuestion  != 10 " class=" min-h-910  md:min-h-560 relative pt-30 md:pt-0 px-15 md:px-50  min-h-910  md:min-h-560 overflow-hidden relative  height-mobile-100">
+            <div v-if="currentQuestion == secondMiniStep && !passSecondMini && currentQuestion  != 10 " class=" min-h-560 relative pt-30 md:pt-0 px-15 md:px-50  min-h-560 overflow-hidden relative  height-mobile-100">
                 <p class=" mt-50 text-white BraindAmanorRegular t-center text-36 md:text-48">Սթափության Թեստ</p>
                 <p class=" mt-20 text-white max-w-500 text-custom t-center">Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա</p>
                 <img src="/images/green.png" alt="" class="mt-20 img-ilusion for-motivi-animation" width="600" height="200">
@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute min-h-910  md:min-h-560 bottom-0 z-200 right-0 flex items-end mobile-motivy"
+            <div class="absolute min-h-560 bottom-0 z-200 right-0 flex items-end mobile-motivy"
                  v-if="(currentQuestion !=10  && questions[currentQuestion].answered) && ( currentQuestion == 1 || currentQuestion == 5  || currentQuestion == 8 )">
                 <img  src="" width="65%" class="img img-main " id="img" alt="">
                 <img src="/images/motivi_1.png" width="100%" class="for-motivi-animation img absolute  top-50  -left-450 pl-30 motivi" alt="">
@@ -111,7 +111,7 @@
                     {{ isRight ? motiviQuotesRight[motiviQountForRightAnswer].quote : motiviQuotesWrong[motiviQountForWrongAnswer].quote }}</p>
 
             </div>
-            <div class="absolute min-h-700  md:min-h-560 bottom-0 z-300   top-0"
+            <div class="absolute min-h-560 bottom-0 z-300   top-0"
                  v-if="currentQuestion  == 10">
                 <div class="w-full h-auto logo-image">
                     <img src="/images/logo.png" alt="" width="150px" class="pl-15 md:pl-50">

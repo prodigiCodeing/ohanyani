@@ -11,7 +11,7 @@
 <body>
     <noscript>Please Enable Javascript</noscript>
     <div id="app">
-        <div class="w-full max-w-1100 bg-green mx-auto  bg-custom-image for-height min-h-925 md:min-h-560">
+        <div class="w-full max-w-1100 bg-green mx-auto  bg-custom-image for-height min-h-560">
             <router-view></router-view>
         </div>
 
