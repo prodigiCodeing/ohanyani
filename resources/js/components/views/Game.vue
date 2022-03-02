@@ -40,12 +40,12 @@
                 </div>
             </div>
         </div>
-        <div v-if="gameStep" class=" min-h-560 overflow-hidden relative  ">
+        <div v-if="gameStep" class=" min-h-560 overflow-hidden relative  height-mobile-100">
             <div :class="['relative  min-h-560 flex flex-col justify-between', (questions[currentQuestion].answered  && ( currentQuestion == 1 || currentQuestion == 5  || currentQuestion == 8 ))  ? 'blure-custom' : '' ]" v-if="(currentQuestion != firstMiniStep || passFirstMini) && (currentQuestion != secondMiniStep || passSecondMini ) && currentQuestion != 10">
                 <div class="flex  w-full justify-between px-50 pt-30">
                     <div class="answer">Հարց <span class="text-textDefault">{{ currentQuestion + 1 }}</span></div>
-                    <div class="flex justify-end">
-                        <div v-for="n in cupCount" class="mx-5"><img src="/images/cup1.png" width="20" alt=""></div>
+                    <div class="flex justify-end flex-wrap flex-cup-image">
+                        <div v-for="n in cupCount" class="mx-5" :key="n"><img src="/images/cup1.png" width="20" alt=""></div>
                     </div>
                 </div>
                 <div>
@@ -76,29 +76,29 @@
                     </div>
                 </div>
             </div>
-            <div v-if="currentQuestion == firstMiniStep && !passFirstMini  && currentQuestion  != 10" class=" min-h-560  height-full relative overflow-hidden ">
+            <div v-if="currentQuestion == firstMiniStep && !passFirstMini  && currentQuestion  != 10" class=" min-h-560  height-full height-mobile-100 relative overflow-hidden ">
                 <p class="absolute heading-text for-motivi-animation">Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ</p>
                 <img class="absolute top-30 mobile-bottom right-100 z-200 img-animation" src="/images/first-mini.png" width="400" alt="">
                 <textarea class="notes for-motivi-animation" v-model="firstMiniAnswer"></textarea>
                 <div class="flex flex-mobile-col px-50 absolute MOBILE-B-60 bottom-60 w-60p items-center scale-up-ver-bottom">
                     <div class="w-60p  pr-60">
-                        <p class="desc pr-20 ">Ամենալավ կենաց ասողը, կստանա  նվեր Ohanyan Brandy-ի կողմից</p>
+                        <p class="desc pr-20 ">Ամենալավ կենաց ասողը, կստանա  ՆՎԵՐ Ohanyan Brandy-ի կողմից</p>
                     </div>
                     <div class="w-40p">
                         <button class="rounded-5 start-game start-send w-full" :disabled="firstMiniAnswer == '' " v-on:click="sendFirstEmail">Ողղարկել</button>
                     </div>
                 </div>
             </div>
-            <div v-if="currentQuestion == secondMiniStep && !passSecondMini && currentQuestion  != 10 " class=" min-h-560 relative px-15 md:px-50">
-                <p class=" mt-50 text-white BraindAmanorRegular t-center text-24 md:text-48">Սթափության Թեստ</p>
+            <div v-if="currentQuestion == secondMiniStep && !passSecondMini && currentQuestion  != 10 " class=" min-h-560 relative pt-30 md:pt-0 px-15 md:px-50  min-h-560 overflow-hidden relative  height-mobile-100">
+                <p class=" mt-50 text-white BraindAmanorRegular t-center text-36 md:text-48">Սթափության Թեստ</p>
                 <p class=" mt-20 text-white max-w-500 text-custom t-center">Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա</p>
                 <img src="/images/green.png" alt="" class="mt-20 img-ilusion for-motivi-animation" width="600" height="200">
-                <img class="absolute top-30 right-100 z-200 ilusion-personage img-animation" src="/images/second-mini.png" width="300" alt="">
-                <div class="flex flex-mobile-col-reverse  absolute bottom-60 w-70p items-end scale-up-ver-bottom">
-                    <div class="w-40p  pr-60">
+                <img class="absolute top-30 right-100 ilusion-personage img-animation" src="/images/second-mini.png" width="300" alt="">
+                <div class="flex flex-mobile-col-reverse  z-200 absolute bottom-60 w-70p items-end scale-up-ver-bottom">
+                    <div class="w-40p mt-30 md:mt-0 pr-60">
                         <input type="text" class="bg-transparent text-white outline-none focus:outline-none active:outline-none border-bottom-1 border-bottom-white bb-s py-5" placeholder="Գրել պատասխանը" v-model="secondMiniAnswer">
                     </div>
-                    <div class="w-40p">
+                    <div class="w-40p bottom-0 z-300 absolute md:relative">
                         <button class="rounded-5 start-game start-send w-full" :disabled="secondMiniAnswer == '' " v-on:click="sendSecondEmail">Ողղարկել</button>
                     </div>
                 </div>
@@ -113,22 +113,22 @@
             </div>
             <div class="absolute min-h-560 bottom-0 z-300   top-0"
                  v-if="currentQuestion  == 10">
-                <div class="w-full h-auto">
+                <div class="w-full h-auto logo-image">
                     <img src="/images/logo.png" alt="" width="150px" class="pl-15 md:pl-50">
                 </div>
                 <div class="flex flex-wrap items-center w-full">
                     <div class="w-full md:w-half-auto pl-15 md:pl-50 for-motivi-animation">
-                        <p class="BraindAmanorRegular text-white text-120 leading-none text-center">{{rightAnswersCount}}/10</p>
-                        <p class="BraindAmanorRegular text-white text-36  text-center"  v-for="item in prize" :key="item.title" v-if="rightAnswersCount <= item.max && rightAnswersCount >=  item.min">
+                        <p class="BraindAmanorRegular text-part-1 text-white text-120 leading-none text-center">{{rightAnswersCount}}/10</p>
+                        <p class="BraindAmanorRegular text-part-2 text-white text-36  text-center"  v-for="item in prize" :key="item.title" v-if="rightAnswersCount <= item.max && rightAnswersCount >=  item.min">
                             {{item.title}}
                         </p>
                         <div class="w-full text-center mt-50 for-desktop">
                             <a class="rounded-5 start-game py-20 px-100 " href="https://www.facebook.com/sharer/sharer.php?u=">Կիսվել</a>
                         </div>
                     </div>
-                    <div class="w-full md:w-half-auto px-15 md:px-50">
-                        <img src="/images/example.jpg" alt="" class="img-animation">
-                        <p class="text-white mt-20 img-animation" v-for="item in prize" :key="item.title" v-if="rightAnswersCount <= item.max && rightAnswersCount >=  item.min">
+                    <div class="w-full md:w-half-auto px-30 md:px-50 flex items-center flex-col-reverse md:flex-col">
+                        <img src="/images/example.jpg" alt="" class="img-animation mt-20 img-gif">
+                        <p class="text-white mt-20 img-animation desc-text text-center md:text-left" v-for="item in prize" :key="item.title" v-if="rightAnswersCount <= item.max && rightAnswersCount >=  item.min">
                             {{item.desc}}
                         </p>
                     </div>

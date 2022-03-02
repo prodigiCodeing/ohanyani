@@ -38120,572 +38120,622 @@ var render = function () {
       : _vm._e(),
     _vm._v(" "),
     _vm.gameStep
-      ? _c("div", { staticClass: " min-h-560 overflow-hidden relative  " }, [
-          (_vm.currentQuestion != _vm.firstMiniStep || _vm.passFirstMini) &&
-          (_vm.currentQuestion != _vm.secondMiniStep || _vm.passSecondMini) &&
-          _vm.currentQuestion != 10
-            ? _c(
-                "div",
-                {
-                  class: [
-                    "relative  min-h-560 flex flex-col justify-between",
-                    _vm.questions[_vm.currentQuestion].answered &&
-                    (_vm.currentQuestion == 1 ||
-                      _vm.currentQuestion == 5 ||
-                      _vm.currentQuestion == 8)
-                      ? "blure-custom"
-                      : "",
-                  ],
-                },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "flex  w-full justify-between px-50 pt-30" },
-                    [
-                      _c("div", { staticClass: "answer" }, [
-                        _vm._v("Հարց "),
-                        _c("span", { staticClass: "text-textDefault" }, [
-                          _vm._v(_vm._s(_vm.currentQuestion + 1)),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "flex justify-end" },
-                        _vm._l(_vm.cupCount, function (n) {
-                          return _c("div", { staticClass: "mx-5" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "/images/cup1.png",
-                                width: "20",
-                                alt: "",
-                              },
-                            }),
-                          ])
-                        }),
-                        0
-                      ),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "flex  w-full justify-center pt-mobile py-50 px-150-mobile font-size-48-mobile px-150 pt-50 text-center answer",
-                      },
-                      [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(
-                              _vm.questions[_vm.currentQuestion].question
-                            ) +
-                            "\n                "
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "flex flex-dir-for-buttons font-size-48-mobile  w-full justify-between pb-50 px-50 px-150-mobile pt-50 text-center flex-wrap",
-                      },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "rounded-5 w-half-auto bg-white text-black px-30 py-10 text arial",
-                            class: [
-                              {
-                                right:
-                                  _vm.questions[_vm.currentQuestion].answered &&
-                                  _vm.questions[_vm.currentQuestion].answers[0]
-                                    .isRight,
-                              },
-                              {
-                                wrong:
-                                  _vm.questions[_vm.currentQuestion].answered &&
-                                  _vm.questions[_vm.currentQuestion]
-                                    .answerType == 0 &&
-                                  !_vm.questions[_vm.currentQuestion].answers[0]
-                                    .isRight,
-                              },
-                            ],
-                            attrs: {
-                              disabled:
-                                _vm.questions[_vm.currentQuestion].answered,
-                            },
-                            on: {
-                              click: function () {
-                                return _vm.checkAnswer(0)
-                              },
-                            },
-                          },
-                          [
-                            _vm._v(
-                              "\n                        " +
-                                _vm._s(
-                                  _vm.questions[_vm.currentQuestion].answers[0]
-                                    .answer
-                                ) +
-                                "\n                    "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "rounded-5 w-half-auto bg-white text-black px-30 py-10 text arial mt-30-mobile",
-                            class: [
-                              {
-                                right:
-                                  _vm.questions[_vm.currentQuestion].answered &&
-                                  _vm.questions[_vm.currentQuestion].answers[1]
-                                    .isRight,
-                              },
-                              {
-                                wrong:
-                                  _vm.questions[_vm.currentQuestion].answered &&
-                                  _vm.questions[_vm.currentQuestion]
-                                    .answerType == 1 &&
-                                  !_vm.questions[_vm.currentQuestion].answers[1]
-                                    .isRight,
-                              },
-                            ],
-                            attrs: {
-                              disabled:
-                                _vm.questions[_vm.currentQuestion].answered,
-                            },
-                            on: {
-                              click: function () {
-                                return _vm.checkAnswer(1)
-                              },
-                            },
-                          },
-                          [
-                            _vm._v(
-                              "\n                        " +
-                                _vm._s(
-                                  _vm.questions[_vm.currentQuestion].answers[1]
-                                    .answer
-                                ) +
-                                "\n                    "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "rounded-5 w-half-auto bg-white  text-black px-30 py-10 mt-30 text arial",
-                            class: [
-                              {
-                                right:
-                                  _vm.questions[_vm.currentQuestion].answered &&
-                                  _vm.questions[_vm.currentQuestion].answers[2]
-                                    .isRight,
-                              },
-                              {
-                                wrong:
-                                  _vm.questions[_vm.currentQuestion].answered &&
-                                  _vm.questions[_vm.currentQuestion]
-                                    .answerType == 2 &&
-                                  !_vm.questions[_vm.currentQuestion].answers[2]
-                                    .isRight,
-                              },
-                            ],
-                            attrs: {
-                              disabled:
-                                _vm.questions[_vm.currentQuestion].answered,
-                            },
-                            on: {
-                              click: function () {
-                                return _vm.checkAnswer(2)
-                              },
-                            },
-                          },
-                          [
-                            _vm._v(
-                              "\n                        " +
-                                _vm._s(
-                                  _vm.questions[_vm.currentQuestion].answers[2]
-                                    .answer
-                                ) +
-                                "\n                    "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "rounded-5 w-half-auto bg-white text-black px-30 py-10 mt-30 text arial",
-                            class: [
-                              {
-                                right:
-                                  _vm.questions[_vm.currentQuestion].answered &&
-                                  _vm.questions[_vm.currentQuestion].answers[3]
-                                    .isRight,
-                              },
-                              {
-                                wrong:
-                                  _vm.questions[_vm.currentQuestion].answered &&
-                                  _vm.questions[_vm.currentQuestion]
-                                    .answerType == 3 &&
-                                  !_vm.questions[_vm.currentQuestion].answers[3]
-                                    .isRight,
-                              },
-                            ],
-                            attrs: {
-                              disabled:
-                                _vm.questions[_vm.currentQuestion].answered,
-                            },
-                            on: {
-                              click: function () {
-                                return _vm.checkAnswer(3)
-                              },
-                            },
-                          },
-                          [
-                            _vm._v(
-                              "\n                        " +
-                                _vm._s(
-                                  _vm.questions[_vm.currentQuestion].answers[3]
-                                    .answer
-                                ) +
-                                "\n                    "
-                            ),
-                          ]
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.currentQuestion == _vm.firstMiniStep &&
-          !_vm.passFirstMini &&
-          _vm.currentQuestion != 10
-            ? _c(
-                "div",
-                {
-                  staticClass:
-                    " min-h-560  height-full relative overflow-hidden ",
-                },
-                [
-                  _c(
-                    "p",
-                    {
-                      staticClass: "absolute heading-text for-motivi-animation",
-                    },
-                    [_vm._v("Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ")]
-                  ),
-                  _vm._v(" "),
-                  _c("img", {
-                    staticClass:
-                      "absolute top-30 mobile-bottom right-100 z-200 img-animation",
-                    attrs: {
-                      src: "/images/first-mini.png",
-                      width: "400",
-                      alt: "",
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.firstMiniAnswer,
-                        expression: "firstMiniAnswer",
-                      },
-                    ],
-                    staticClass: "notes for-motivi-animation",
-                    domProps: { value: _vm.firstMiniAnswer },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.firstMiniAnswer = $event.target.value
-                      },
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "flex flex-mobile-col px-50 absolute MOBILE-B-60 bottom-60 w-60p items-center scale-up-ver-bottom",
-                    },
-                    [
-                      _vm._m(3),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "w-40p" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "rounded-5 start-game start-send w-full",
-                            attrs: { disabled: _vm.firstMiniAnswer == "" },
-                            on: { click: _vm.sendFirstEmail },
-                          },
-                          [_vm._v("Ողղարկել")]
-                        ),
-                      ]),
-                    ]
-                  ),
-                ]
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.currentQuestion == _vm.secondMiniStep &&
-          !_vm.passSecondMini &&
-          _vm.currentQuestion != 10
-            ? _c("div", { staticClass: " min-h-560 relative px-15 md:px-50" }, [
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      " mt-50 text-white BraindAmanorRegular t-center text-24 md:text-48",
-                  },
-                  [_vm._v("Սթափության Թեստ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      " mt-20 text-white max-w-500 text-custom t-center",
-                  },
-                  [
-                    _vm._v(
-                      "Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա"
-                    ),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "mt-20 img-ilusion for-motivi-animation",
-                  attrs: {
-                    src: "/images/green.png",
-                    alt: "",
-                    width: "600",
-                    height: "200",
-                  },
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass:
-                    "absolute top-30 right-100 z-200 ilusion-personage img-animation",
-                  attrs: {
-                    src: "/images/second-mini.png",
-                    width: "300",
-                    alt: "",
-                  },
-                }),
-                _vm._v(" "),
-                _c(
+      ? _c(
+          "div",
+          {
+            staticClass:
+              " min-h-560 overflow-hidden relative  height-mobile-100",
+          },
+          [
+            (_vm.currentQuestion != _vm.firstMiniStep || _vm.passFirstMini) &&
+            (_vm.currentQuestion != _vm.secondMiniStep || _vm.passSecondMini) &&
+            _vm.currentQuestion != 10
+              ? _c(
                   "div",
                   {
-                    staticClass:
-                      "flex flex-mobile-col-reverse  absolute bottom-60 w-70p items-end scale-up-ver-bottom",
+                    class: [
+                      "relative  min-h-560 flex flex-col justify-between",
+                      _vm.questions[_vm.currentQuestion].answered &&
+                      (_vm.currentQuestion == 1 ||
+                        _vm.currentQuestion == 5 ||
+                        _vm.currentQuestion == 8)
+                        ? "blure-custom"
+                        : "",
+                    ],
                   },
                   [
-                    _c("div", { staticClass: "w-40p  pr-60" }, [
-                      _c("input", {
-                        directives: [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "flex  w-full justify-between px-50 pt-30",
+                      },
+                      [
+                        _c("div", { staticClass: "answer" }, [
+                          _vm._v("Հարց "),
+                          _c("span", { staticClass: "text-textDefault" }, [
+                            _vm._v(_vm._s(_vm.currentQuestion + 1)),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
                           {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.secondMiniAnswer,
-                            expression: "secondMiniAnswer",
+                            staticClass:
+                              "flex justify-end flex-wrap flex-cup-image",
                           },
-                        ],
-                        staticClass:
-                          "bg-transparent text-white outline-none focus:outline-none active:outline-none border-bottom-1 border-bottom-white bb-s py-5",
-                        attrs: { type: "text", placeholder: "Գրել պատասխանը" },
-                        domProps: { value: _vm.secondMiniAnswer },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.secondMiniAnswer = $event.target.value
-                          },
-                        },
-                      }),
-                    ]),
+                          _vm._l(_vm.cupCount, function (n) {
+                            return _c("div", { key: n, staticClass: "mx-5" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/images/cup1.png",
+                                  width: "20",
+                                  alt: "",
+                                },
+                              }),
+                            ])
+                          }),
+                          0
+                        ),
+                      ]
+                    ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "w-40p" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "rounded-5 start-game start-send w-full",
-                          attrs: { disabled: _vm.secondMiniAnswer == "" },
-                          on: { click: _vm.sendSecondEmail },
-                        },
-                        [_vm._v("Ողղարկել")]
-                      ),
-                    ]),
-                  ]
-                ),
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.currentQuestion != 10 &&
-          _vm.questions[_vm.currentQuestion].answered &&
-          (_vm.currentQuestion == 1 ||
-            _vm.currentQuestion == 5 ||
-            _vm.currentQuestion == 8)
-            ? _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute min-h-560 bottom-0 z-200 right-0 flex items-end mobile-motivy",
-                },
-                [
-                  _c("img", {
-                    staticClass: "img img-main ",
-                    attrs: { src: "", width: "65%", id: "img", alt: "" },
-                  }),
-                  _vm._v(" "),
-                  _c("img", {
-                    staticClass:
-                      "for-motivi-animation img absolute  top-50  -left-450 pl-30 motivi",
-                    attrs: {
-                      src: "/images/motivi_1.png",
-                      width: "100%",
-                      alt: "",
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "p",
-                    {
-                      staticClass:
-                        "for-motivi-animation-text BraindAmanorRegular absolute top-100 w-70p pl-30 motivi arial -left-410",
-                    },
-                    [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(
-                            _vm.isRight
-                              ? _vm.motiviQuotesRight[
-                                  _vm.motiviQountForRightAnswer
-                                ].quote
-                              : _vm.motiviQuotesWrong[
-                                  _vm.motiviQountForWrongAnswer
-                                ].quote
-                          )
-                      ),
-                    ]
-                  ),
-                ]
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.currentQuestion == 10
-            ? _c(
-                "div",
-                { staticClass: "absolute min-h-560 bottom-0 z-300   top-0" },
-                [
-                  _vm._m(4),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "flex flex-wrap items-center w-full" },
-                    [
+                    _c("div", [
                       _c(
                         "div",
                         {
                           staticClass:
-                            "w-full md:w-half-auto pl-15 md:pl-50 for-motivi-animation",
+                            "flex  w-full justify-center pt-mobile py-50 px-150-mobile font-size-48-mobile px-150 pt-50 text-center answer",
                         },
                         [
-                          _c(
-                            "p",
-                            {
-                              staticClass:
-                                "BraindAmanorRegular text-white text-120 leading-none text-center",
-                            },
-                            [_vm._v(_vm._s(_vm.rightAnswersCount) + "/10")]
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(
+                                _vm.questions[_vm.currentQuestion].question
+                              ) +
+                              "\n                "
                           ),
-                          _vm._v(" "),
-                          _vm._l(_vm.prize, function (item) {
-                            return _vm.rightAnswersCount <= item.max &&
-                              _vm.rightAnswersCount >= item.min
-                              ? _c(
-                                  "p",
-                                  {
-                                    key: item.title,
-                                    staticClass:
-                                      "BraindAmanorRegular text-white text-36  text-center",
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                        " +
-                                        _vm._s(item.title) +
-                                        "\n                    "
-                                    ),
-                                  ]
-                                )
-                              : _vm._e()
-                          }),
-                          _vm._v(" "),
-                          _vm._m(5),
-                        ],
-                        2
+                        ]
                       ),
                       _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "w-full md:w-half-auto px-15 md:px-50" },
+                        {
+                          staticClass:
+                            "flex flex-dir-for-buttons font-size-48-mobile  w-full justify-between pb-50 px-50 px-150-mobile pt-50 text-center flex-wrap",
+                        },
                         [
-                          _c("img", {
-                            staticClass: "img-animation",
-                            attrs: { src: "/images/example.jpg", alt: "" },
-                          }),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "rounded-5 w-half-auto bg-white text-black px-30 py-10 text arial",
+                              class: [
+                                {
+                                  right:
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answered &&
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answers[0].isRight,
+                                },
+                                {
+                                  wrong:
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answered &&
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answerType == 0 &&
+                                    !_vm.questions[_vm.currentQuestion]
+                                      .answers[0].isRight,
+                                },
+                              ],
+                              attrs: {
+                                disabled:
+                                  _vm.questions[_vm.currentQuestion].answered,
+                              },
+                              on: {
+                                click: function () {
+                                  return _vm.checkAnswer(0)
+                                },
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answers[0].answer
+                                  ) +
+                                  "\n                    "
+                              ),
+                            ]
+                          ),
                           _vm._v(" "),
-                          _vm._l(_vm.prize, function (item) {
-                            return _vm.rightAnswersCount <= item.max &&
-                              _vm.rightAnswersCount >= item.min
-                              ? _c(
-                                  "p",
-                                  {
-                                    key: item.title,
-                                    staticClass:
-                                      "text-white mt-20 img-animation",
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                        " +
-                                        _vm._s(item.desc) +
-                                        "\n                    "
-                                    ),
-                                  ]
-                                )
-                              : _vm._e()
-                          }),
-                        ],
-                        2
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "rounded-5 w-half-auto bg-white text-black px-30 py-10 text arial mt-30-mobile",
+                              class: [
+                                {
+                                  right:
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answered &&
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answers[1].isRight,
+                                },
+                                {
+                                  wrong:
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answered &&
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answerType == 1 &&
+                                    !_vm.questions[_vm.currentQuestion]
+                                      .answers[1].isRight,
+                                },
+                              ],
+                              attrs: {
+                                disabled:
+                                  _vm.questions[_vm.currentQuestion].answered,
+                              },
+                              on: {
+                                click: function () {
+                                  return _vm.checkAnswer(1)
+                                },
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answers[1].answer
+                                  ) +
+                                  "\n                    "
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "rounded-5 w-half-auto bg-white  text-black px-30 py-10 mt-30 text arial",
+                              class: [
+                                {
+                                  right:
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answered &&
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answers[2].isRight,
+                                },
+                                {
+                                  wrong:
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answered &&
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answerType == 2 &&
+                                    !_vm.questions[_vm.currentQuestion]
+                                      .answers[2].isRight,
+                                },
+                              ],
+                              attrs: {
+                                disabled:
+                                  _vm.questions[_vm.currentQuestion].answered,
+                              },
+                              on: {
+                                click: function () {
+                                  return _vm.checkAnswer(2)
+                                },
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answers[2].answer
+                                  ) +
+                                  "\n                    "
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "rounded-5 w-half-auto bg-white text-black px-30 py-10 mt-30 text arial",
+                              class: [
+                                {
+                                  right:
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answered &&
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answers[3].isRight,
+                                },
+                                {
+                                  wrong:
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answered &&
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answerType == 3 &&
+                                    !_vm.questions[_vm.currentQuestion]
+                                      .answers[3].isRight,
+                                },
+                              ],
+                              attrs: {
+                                disabled:
+                                  _vm.questions[_vm.currentQuestion].answered,
+                              },
+                              on: {
+                                click: function () {
+                                  return _vm.checkAnswer(3)
+                                },
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(
+                                    _vm.questions[_vm.currentQuestion]
+                                      .answers[3].answer
+                                  ) +
+                                  "\n                    "
+                              ),
+                            ]
+                          ),
+                        ]
                       ),
-                      _vm._v(" "),
-                      _vm._m(6),
-                    ]
-                  ),
-                ]
-              )
-            : _vm._e(),
-        ])
+                    ]),
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.currentQuestion == _vm.firstMiniStep &&
+            !_vm.passFirstMini &&
+            _vm.currentQuestion != 10
+              ? _c(
+                  "div",
+                  {
+                    staticClass:
+                      " min-h-560  height-full height-mobile-100 relative overflow-hidden ",
+                  },
+                  [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "absolute heading-text for-motivi-animation",
+                      },
+                      [
+                        _vm._v(
+                          "Կենացով շնորհավորի՛ր կանանց տոների կապակցությամբ"
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass:
+                        "absolute top-30 mobile-bottom right-100 z-200 img-animation",
+                      attrs: {
+                        src: "/images/first-mini.png",
+                        width: "400",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.firstMiniAnswer,
+                          expression: "firstMiniAnswer",
+                        },
+                      ],
+                      staticClass: "notes for-motivi-animation",
+                      domProps: { value: _vm.firstMiniAnswer },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.firstMiniAnswer = $event.target.value
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "flex flex-mobile-col px-50 absolute MOBILE-B-60 bottom-60 w-60p items-center scale-up-ver-bottom",
+                      },
+                      [
+                        _vm._m(3),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "w-40p" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "rounded-5 start-game start-send w-full",
+                              attrs: { disabled: _vm.firstMiniAnswer == "" },
+                              on: { click: _vm.sendFirstEmail },
+                            },
+                            [_vm._v("Ողղարկել")]
+                          ),
+                        ]),
+                      ]
+                    ),
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.currentQuestion == _vm.secondMiniStep &&
+            !_vm.passSecondMini &&
+            _vm.currentQuestion != 10
+              ? _c(
+                  "div",
+                  {
+                    staticClass:
+                      " min-h-560 relative pt-30 md:pt-0 px-15 md:px-50  min-h-560 overflow-hidden relative  height-mobile-100",
+                  },
+                  [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          " mt-50 text-white BraindAmanorRegular t-center text-36 md:text-48",
+                      },
+                      [_vm._v("Սթափության Թեստ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          " mt-20 text-white max-w-500 text-custom t-center",
+                      },
+                      [
+                        _vm._v(
+                          "Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա"
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "mt-20 img-ilusion for-motivi-animation",
+                      attrs: {
+                        src: "/images/green.png",
+                        alt: "",
+                        width: "600",
+                        height: "200",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass:
+                        "absolute top-30 right-100 ilusion-personage img-animation",
+                      attrs: {
+                        src: "/images/second-mini.png",
+                        width: "300",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "flex flex-mobile-col-reverse  z-200 absolute bottom-60 w-70p items-end scale-up-ver-bottom",
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "w-40p mt-30 md:mt-0 pr-60" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.secondMiniAnswer,
+                                  expression: "secondMiniAnswer",
+                                },
+                              ],
+                              staticClass:
+                                "bg-transparent text-white outline-none focus:outline-none active:outline-none border-bottom-1 border-bottom-white bb-s py-5",
+                              attrs: {
+                                type: "text",
+                                placeholder: "Գրել պատասխանը",
+                              },
+                              domProps: { value: _vm.secondMiniAnswer },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.secondMiniAnswer = $event.target.value
+                                },
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "w-40p bottom-0 z-300 absolute md:relative",
+                          },
+                          [
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "rounded-5 start-game start-send w-full",
+                                attrs: { disabled: _vm.secondMiniAnswer == "" },
+                                on: { click: _vm.sendSecondEmail },
+                              },
+                              [_vm._v("Ողղարկել")]
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.currentQuestion != 10 &&
+            _vm.questions[_vm.currentQuestion].answered &&
+            (_vm.currentQuestion == 1 ||
+              _vm.currentQuestion == 5 ||
+              _vm.currentQuestion == 8)
+              ? _c(
+                  "div",
+                  {
+                    staticClass:
+                      "absolute min-h-560 bottom-0 z-200 right-0 flex items-end mobile-motivy",
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "img img-main ",
+                      attrs: { src: "", width: "65%", id: "img", alt: "" },
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass:
+                        "for-motivi-animation img absolute  top-50  -left-450 pl-30 motivi",
+                      attrs: {
+                        src: "/images/motivi_1.png",
+                        width: "100%",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "for-motivi-animation-text BraindAmanorRegular absolute top-100 w-70p pl-30 motivi arial -left-410",
+                      },
+                      [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(
+                              _vm.isRight
+                                ? _vm.motiviQuotesRight[
+                                    _vm.motiviQountForRightAnswer
+                                  ].quote
+                                : _vm.motiviQuotesWrong[
+                                    _vm.motiviQountForWrongAnswer
+                                  ].quote
+                            )
+                        ),
+                      ]
+                    ),
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.currentQuestion == 10
+              ? _c(
+                  "div",
+                  { staticClass: "absolute min-h-560 bottom-0 z-300   top-0" },
+                  [
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "flex flex-wrap items-center w-full" },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "w-full md:w-half-auto pl-15 md:pl-50 for-motivi-animation",
+                          },
+                          [
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "BraindAmanorRegular text-part-1 text-white text-120 leading-none text-center",
+                              },
+                              [_vm._v(_vm._s(_vm.rightAnswersCount) + "/10")]
+                            ),
+                            _vm._v(" "),
+                            _vm._l(_vm.prize, function (item) {
+                              return _vm.rightAnswersCount <= item.max &&
+                                _vm.rightAnswersCount >= item.min
+                                ? _c(
+                                    "p",
+                                    {
+                                      key: item.title,
+                                      staticClass:
+                                        "BraindAmanorRegular text-part-2 text-white text-36  text-center",
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                        " +
+                                          _vm._s(item.title) +
+                                          "\n                    "
+                                      ),
+                                    ]
+                                  )
+                                : _vm._e()
+                            }),
+                            _vm._v(" "),
+                            _vm._m(5),
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "w-full md:w-half-auto px-30 md:px-50 flex items-center flex-col-reverse md:flex-col",
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "img-animation mt-20 img-gif",
+                              attrs: { src: "/images/example.jpg", alt: "" },
+                            }),
+                            _vm._v(" "),
+                            _vm._l(_vm.prize, function (item) {
+                              return _vm.rightAnswersCount <= item.max &&
+                                _vm.rightAnswersCount >= item.min
+                                ? _c(
+                                    "p",
+                                    {
+                                      key: item.title,
+                                      staticClass:
+                                        "text-white mt-20 img-animation desc-text text-center md:text-left",
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                        " +
+                                          _vm._s(item.desc) +
+                                          "\n                    "
+                                      ),
+                                    ]
+                                  )
+                                : _vm._e()
+                            }),
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _vm._m(6),
+                      ]
+                    ),
+                  ]
+                )
+              : _vm._e(),
+          ]
+        )
       : _vm._e(),
   ])
 }
@@ -38776,7 +38826,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "w-60p  pr-60" }, [
       _c("p", { staticClass: "desc pr-20 " }, [
-        _vm._v("Ամենալավ կենաց ասողը, կստանա  նվեր Ohanyan Brandy-ի կողմից"),
+        _vm._v("Ամենալավ կենաց ասողը, կստանա  ՆՎԵՐ Ohanyan Brandy-ի կողմից"),
       ]),
     ])
   },
@@ -38784,7 +38834,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-full h-auto" }, [
+    return _c("div", { staticClass: "w-full h-auto logo-image" }, [
       _c("img", {
         staticClass: "pl-15 md:pl-50",
         attrs: { src: "/images/logo.png", alt: "", width: "150px" },
