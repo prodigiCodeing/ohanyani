@@ -38485,23 +38485,12 @@ var render = function () {
                       "p",
                       {
                         staticClass:
-                          " mt-50 text-white BraindAmanorRegular t-center text-36 md:text-48",
+                          " mt-10  text-white BraindAmanorRegular t-center text-36 md:text-48",
                       },
                       [_vm._v("Սթափության Թեստ")]
                     ),
                     _vm._v(" "),
-                    _c(
-                      "p",
-                      {
-                        staticClass:
-                          " mt-20 text-white max-w-500 text-custom t-center",
-                      },
-                      [
-                        _vm._v(
-                          "Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա"
-                        ),
-                      ]
-                    ),
+                    _vm._m(4),
                     _vm._v(" "),
                     _c("img", {
                       staticClass: "mt-20 img-ilusion for-motivi-animation",
@@ -38644,7 +38633,7 @@ var render = function () {
                   "div",
                   { staticClass: "absolute min-h-560 bottom-0 z-300   top-0" },
                   [
-                    _vm._m(4),
+                    _vm._m(5),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -38687,7 +38676,7 @@ var render = function () {
                                 : _vm._e()
                             }),
                             _vm._v(" "),
-                            _vm._m(5),
+                            _vm._m(6),
                           ],
                           2
                         ),
@@ -38728,7 +38717,7 @@ var render = function () {
                           2
                         ),
                         _vm._v(" "),
-                        _vm._m(6),
+                        _vm._m(7),
                       ]
                     ),
                   ]
@@ -38829,6 +38818,24 @@ var staticRenderFns = [
         _vm._v("Ամենալավ կենաց ասողը, կստանա  ՆՎԵՐ Ohanyan Brandy-ի կողմից"),
       ]),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      { staticClass: " mt-20 text-white max-w-500 text-custom t-center" },
+      [
+        _c("span", { staticClass: "text-18" }, [
+          _vm._v(" Ներքևում գրիր, թե ի՞նչ ես տեսնում պատկերում։"),
+        ]),
+        _c("br"),
+        _vm._v(
+          " Առաջինը ճիշտ պատասխանողը կստանա նվեր Ohanyan Brandy-ի կողմից։ "
+        ),
+      ]
+    )
   },
   function () {
     var _vm = this

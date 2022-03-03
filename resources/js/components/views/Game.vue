@@ -90,8 +90,8 @@
                 </div>
             </div>
             <div v-if="currentQuestion == secondMiniStep && !passSecondMini && currentQuestion  != 10 " class=" min-h-560 relative pt-30 md:pt-0 px-15 md:px-50  min-h-560 overflow-hidden relative  height-mobile-100">
-                <p class=" mt-50 text-white BraindAmanorRegular t-center text-36 md:text-48">Սթափության Թեստ</p>
-                <p class=" mt-20 text-white max-w-500 text-custom t-center">Այսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատաԱյսքան կենացից հետո, միայն սթափ մնացածները կկարողանան ճիշտ պատա</p>
+                <p class=" mt-10  text-white BraindAmanorRegular t-center text-36 md:text-48">Սթափության Թեստ</p>
+                <p class=" mt-20 text-white max-w-500 text-custom t-center"><span class="text-18"> Ներքևում գրիր, թե ի՞նչ ես տեսնում պատկերում։</span><br> Առաջինը ճիշտ պատասխանողը կստանա նվեր Ohanyan Brandy-ի կողմից։ </p>
                 <img src="/images/green.png" alt="" class="mt-20 img-ilusion for-motivi-animation" width="600" height="200">
                 <img class="absolute top-30 right-100 ilusion-personage img-animation" src="/images/second-mini.png" width="300" alt="">
                 <div class="flex flex-mobile-col-reverse  z-200 absolute bottom-60 w-70p items-end scale-up-ver-bottom">
