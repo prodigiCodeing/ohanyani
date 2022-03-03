@@ -85,7 +85,7 @@
                         <p class="desc pr-20 ">Ամենալավ կենաց ասողը, կստանա  ՆՎԵՐ Ohanyan Brandy-ի կողմից</p>
                     </div>
                     <div class="w-40p">
-                        <button class="rounded-5 start-game start-send w-full" :disabled="firstMiniAnswer == '' " v-on:click="sendFirstEmail">Ողղարկել</button>
+                        <button class="rounded-5 start-game start-send w-full" :disabled="firstMiniAnswer == '' " v-on:click="sendFirstEmail">Ուղարկել</button>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                         <input type="text" class="bg-transparent text-white outline-none focus:outline-none active:outline-none border-bottom-1 border-bottom-white bb-s py-5" placeholder="Գրել պատասխանը" v-model="secondMiniAnswer">
                     </div>
                     <div class="w-40p bottom-0 z-300 absolute md:relative">
-                        <button class="rounded-5 start-game start-send w-full" :disabled="secondMiniAnswer == '' " v-on:click="sendSecondEmail">Ողղարկել</button>
+                        <button class="rounded-5 start-game start-send w-full" :disabled="secondMiniAnswer == '' " v-on:click="sendSecondEmail">Ուղարկել</button>
                     </div>
                 </div>
             </div>
@@ -256,7 +256,7 @@ export default {
                         {answer: "մեղքերը ներել", isRight: false},
                         {answer: "նորանոր առիթներ ստեղծել", isRight: false},
                         {answer: "առողջություն տալ սեղանակիցներին", isRight: false},
-                        {answer: "եղածը շատ չհամարե", isRight: true}
+                        {answer: "եղածը շատ չհամարել", isRight: true}
                     ],
                     answered: false,
                     answerType: ""

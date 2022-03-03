@@ -2258,7 +2258,7 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common = {
           answer: "առողջություն տալ սեղանակիցներին",
           isRight: false
         }, {
-          answer: "եղածը շատ չհամարե",
+          answer: "եղածը շատ չհամարել",
           isRight: true
         }],
         answered: false,
@@ -38462,7 +38462,7 @@ var render = function () {
                               attrs: { disabled: _vm.firstMiniAnswer == "" },
                               on: { click: _vm.sendFirstEmail },
                             },
-                            [_vm._v("Ողղարկել")]
+                            [_vm._v("Ուղարկել")]
                           ),
                         ]),
                       ]
@@ -38577,7 +38577,7 @@ var render = function () {
                                 attrs: { disabled: _vm.secondMiniAnswer == "" },
                                 on: { click: _vm.sendSecondEmail },
                               },
-                              [_vm._v("Ողղարկել")]
+                              [_vm._v("Ուղարկել")]
                             ),
                           ]
                         ),
