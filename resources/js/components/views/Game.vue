@@ -109,7 +109,6 @@
                 <img src="/images/motivi_1.png" width="100%" class="for-motivi-animation img absolute  top-50  -left-450 pl-30 motivi" alt="">
                 <p class="for-motivi-animation-text BraindAmanorRegular absolute top-100 w-70p pl-30 motivi arial -left-410">
                     {{ isRight ? motiviQuotesRight[motiviQountForRightAnswer].quote : motiviQuotesWrong[motiviQountForWrongAnswer].quote }}</p>
-
             </div>
             <div class="absolute min-h-560 bottom-0 z-300   top-0"
                  v-if="currentQuestion  == 10">
