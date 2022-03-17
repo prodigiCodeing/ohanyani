@@ -15,12 +15,10 @@
         </div>
     </div>
 </template>
-
 <script>
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
-
 export default {
     name: "StartGame",
     methods:{
@@ -34,7 +32,5 @@ export default {
     }
 }
 </script>
-
 <style scoped>
-
 </style>

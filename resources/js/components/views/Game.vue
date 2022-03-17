@@ -313,8 +313,6 @@ export default {
             gameStep:false,
         }
     },
-
-
     methods: {
         setSecondStep(){
             this.firstPage=false;
@@ -395,7 +393,5 @@ export default {
     }
 }
 </script>
-
 <style scoped>
-
 </style>
